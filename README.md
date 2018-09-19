@@ -3,7 +3,7 @@
 New to Berlin? 
 This App is the solution for dog people looking for nice places to go for walks and other dog people to go with.
 
-# Created with a React + express starter template (by Lukas)
+## Created with a React + express starter template (by Lukas)
 
 1. Clone or copy this repository
 2. `npm install`
