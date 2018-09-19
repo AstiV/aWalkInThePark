@@ -1,8 +1,12 @@
-# React + express starter template, by Lukas
+# A Walk in the Park - connect to go for pack walks
+
+New to Berlin? 
+This App is the solution for dog people looking for nice places to go for walks and other dog people to go with.
+
+## Created with a React + express starter template (by Lukas)
 
 1. Clone or copy this repository
 2. `npm install`
-3. Change the DB name in `src/server/config.js`
 4. `npm run dev`
 5. Go to `http://localhost:3000`
 
