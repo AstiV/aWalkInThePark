@@ -20,8 +20,20 @@ const dogSchema = new Schema({
     },
 
     getsAlongWith: {
-        type: String,
-        enum: ["kids", "dogs", "cats"]
+        kids: {
+            type: Boolean,
+            default: false
+        },
+
+        dogs: {
+            type: Boolean,
+            default: false
+        },
+
+        cats: {
+            type: Boolean,
+            default: false
+        }
     },
 
     character: {
@@ -29,27 +41,27 @@ const dogSchema = new Schema({
             type: Number,
             enum: [1, 2, 3, 4, 5]
         },
-    
+
         agility: {
             type: Number,
             enum: [1, 2, 3, 4, 5]
         },
-    
+
         stubborn: {
             type: Number,
             enum: [1, 2, 3, 4, 5]
         },
-    
+
         water: {
             type: Number,
             enum: [1, 2, 3, 4, 5]
         },
-    
+
         snuggly: {
             type: Number,
             enum: [1, 2, 3, 4, 5]
         },
-    
+
         fightGamer: {
             type: Number,
             enum: [1, 2, 3, 4, 5]
