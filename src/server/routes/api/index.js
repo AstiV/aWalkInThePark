@@ -20,7 +20,7 @@ router.get("/protected", checkLoggedIn, (req, res) => {
 
 router.use("/auth", authRoutes);
 router.use("/dog", dogRoutes);
-// router.use("/walk", walkRoutes);
+router.use("/walk", walkRoutes);
 
 router.use((req, res) => {
     res.status(404).send({ error: "not-found" });
