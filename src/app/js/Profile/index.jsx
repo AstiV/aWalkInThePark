@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 class Profile extends Component {
     render() {
-        if (!this.props.user) return <Redirect to="/auth/sign-in" /> // this is actually the protection
+        if (!this.props.user) return <Redirect to="/auth/sign-in" />; // this is actually the protection
 
         return (
             <div className="container">
@@ -13,8 +13,8 @@ class Profile extends Component {
                 <br />
                 {this.props.user.email}
             </div>
-        )
+        );
     }
 }
 
-export default Profile
+export default Profile;
