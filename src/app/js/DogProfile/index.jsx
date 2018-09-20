@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 
-// import api from "../utils/api";
+import api from "../utils/api";
 
 class DogProfile extends Component {
     constructor(props) {
@@ -11,11 +11,11 @@ class DogProfile extends Component {
             name: "",
             age: "",
             breed: "",
-            getsAlongWith: {
-                kids: false,
-                dogs: false,
-                cats: false
-            },
+            // getsAlongWith: {
+            //     kids: false,
+            //     dogs: false,
+            //     cats: false
+            // },
             // character: {
             //     courage: undefined,
             //     agility: undefined,
@@ -24,7 +24,7 @@ class DogProfile extends Component {
             //     snuggly: undefined,
             //     fightGamer: undefined
             // },
-            weight: ""
+            weight: "",
             // restrictions: {
             //     maleDogs: false,
             //     femaleDogs: false,
@@ -32,7 +32,7 @@ class DogProfile extends Component {
             //     publicTransport: false,
             //     car: false
             // },
-            // aboutMe: ""
+            aboutMe: ""
 
             // TODO where are pictures handled?
             // dogPictures: dog.dogPictures
@@ -56,7 +56,7 @@ class DogProfile extends Component {
                 <br />
                 {this.props.user.email}
                 <br /> */}
-                <h1>Edit the Dog Profile Page</h1>
+                <h1>Edit your Dog's Profile Page</h1>
                 <input
                     type="text"
                     value={this.state.name}
@@ -77,6 +77,7 @@ class DogProfile extends Component {
                     onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                 />
                 <br />
+                {/* <h3>Who does your Dog get along with?</h3>
                 <label htmlFor="">
                     <input
                         type="checkbox"
@@ -103,54 +104,249 @@ class DogProfile extends Component {
                     />
                     Cats
                 </label>
-                <br />
-                {/* <label htmlFor="">
+                <br /> */}
+                {/* <h3>Your Dog's Character</h3>
+                <label htmlFor="">
+                    Scaredy-Cat
                     <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.kids}
-                        onChange={evt => this._getsAlongWithChangeHandler(`kids`)}
+                        type="range"
+                        value={this.state.character.courage}
+                        onChange={evt => this._inputChangeHandler("courage", evt.target.value)}
+                        min="1"
+                        max="5"
+                        step="1"
                     />
-                    Kids
+                    Daredevil
                 </label>
                 <br />
                 <label htmlFor="">
+                    Energy Saver
                     <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.dogs}
-                        onChange={evt => this._getsAlongWithChangeHandler(`dogs`)}
+                        type="range"
+                        value={this.state.character.agility}
+                        onChange={evt => this._inputChangeHandler("agility", evt.target.value)}
+                        min="1"
+                        max="5"
+                        step="1"
                     />
-                    Dogs
+                    Marathon Runner
                 </label>
                 <br />
                 <label htmlFor="">
+                    Yes-Sayer
                     <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.cats}
-                        onChange={evt => this._getsAlongWithChangeHandler(`cats`)}
+                        type="range"
+                        value={this.state.character.stubborn}
+                        onChange={evt => this._inputChangeHandler("stubborn", evt.target.value)}
+                        min="1"
+                        max="5"
+                        step="1"
                     />
-                    Cats
+                    Stubborn
+                </label>
+                <br />
+                <label htmlFor="">
+                    Non-Swimmer
+                    <input
+                        type="range"
+                        value={this.state.character.water}
+                        onChange={evt => this._inputChangeHandler("water", evt.target.value)}
+                        min="1"
+                        max="5"
+                        step="1"
+                    />
+                    Water Rat
+                </label>
+                <br />
+                <label htmlFor="">
+                    Ice Block
+                    <input
+                        type="range"
+                        defaultValue={this.state.character.snuggly}
+                        // onChange={evt => this._inputChangeHandler("snuggly", evt.target.value)}
+                        onChange={e =>
+                            this.setState({
+                                character: {
+                                    snuggly: e.target.value
+                                }
+                            })
+                        }
+                        min="1"
+                        max="5"
+                        step="1"
+                    />
+                    Snuggly
+                </label>
+                <br />
+                <label htmlFor="">
+                    Fighting Games Player
+                    <input
+                        type="range"
+                        defaultValue={this.state.character.fightGamer}
+                        // onChange={evt =>
+                        //     this._sliderChangeHandler("character.fightGamer", Number(evt.target.value))
+                        // }
+                        onChange={e =>
+                            this.setState({
+                                character: {
+                                    fightGamer: e.target.value
+                                }
+                            })
+                        }
+                        min="1"
+                        max="5"
+                        step="1"
+                    />
+                    Rather no Physical Contact
                 </label> */}
+                <br />
+                <h3>Weight</h3>
+                <label>
+                    <input
+                        type="radio"
+                        value="light"
+                        checked={this.state.weight === "light"}
+                        onChange={evt => this._inputChangeHandler("weight", evt.target.value)}
+                    />
+                    Less than 15kg
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        value="middle"
+                        checked={this.state.weight === "middle"}
+                        onChange={evt => this._inputChangeHandler("weight", evt.target.value)}
+                    />
+                    15-30kg
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        value="heavy"
+                        checked={this.state.weight === "heavy"}
+                        onChange={evt => this._inputChangeHandler("weight", evt.target.value)}
+                    />
+                    more than 30kg
+                </label>
+                <br />
+                {/* <h3>Any Restrictions?</h3>
+                <label htmlFor="">
+                    <input
+                        type="checkbox"
+                        value={this.state.restrictions.maleDogs}
+                        onChange={evt => this._restrictionsChangeHandler(`maleDogs`)}
+                    />
+                    Male Dogs
+                </label>
+                <br />
+                <label htmlFor="">
+                    <input
+                        type="checkbox"
+                        value={this.state.restrictions.femaleDogs}
+                        onChange={evt => this._restrictionsChangeHandler(`femaleDogs`)}
+                    />
+                    Female Dogs
+                </label>
+                <br />
+                <label htmlFor="">
+                    <input
+                        type="checkbox"
+                        value={this.state.restrictions.traffic}
+                        onChange={evt => this._restrictionsChangeHandler(`traffic`)}
+                    />
+                    Traffic
+                </label>
+                <br />
+                <label htmlFor="">
+                    <input
+                        type="checkbox"
+                        value={this.state.restrictions.publicTransport}
+                        onChange={evt => this._restrictionsChangeHandler(`publicTransport`)}
+                    />
+                    Public Transport
+                </label>
+                <br />
+                <label htmlFor="">
+                    <input
+                        type="checkbox"
+                        value={this.state.restrictions.car}
+                        onChange={evt => this._restrictionsChangeHandler(`car`)}
+                    />
+                    Cars
+                </label>
+                <br /> */}
+                <h3>About Me</h3>
+                <textarea
+                    cols="50"
+                    rows="5"
+                    value={this.state.aboutMe}
+                    onChange={evt => this._inputChangeHandler("aboutMe", evt.target.value)}
+                />
+                <br />
+                <br />
                 <button onClick={this._submitData}>SUBMIT</button>
             </div>
         );
     }
 
     _submitData() {
-        console.log("submitting Data", this.state);
-        // api.post('/api/your-endpoint', {
+        // console.log("submitting Data", this.state);
+        // api.post('/api/dog/new', {
         //     profession: this.state.profession,
         //     age: this.state.age,
         //     favoriteFood: this.state.favoriteFood,
         //     ...
         // })
-        // .then(result => {
-        //     console.log(result)
-        // })
+        api.post("/api/dog/new", {
+            name: this.state.name,
+            age: this.state.age,
+            breed: this.state.breed,
+            // getsAlongWith: {
+            //     kids: this.state.kids,
+            //     dogs: this.state.dogs,
+            //     cats: this.state.cats
+            // },
+            // character: {
+            //     courage: undefined,
+            //     agility: undefined,
+            //     stubborn: undefined,
+            //     water: undefined,
+            //     snuggly: undefined,
+            //     fightGamer: undefined
+            // },
+            weight: this.state.weight,
+            // restrictions: {
+            //     maleDogs: this.state.maleDogs,
+            //     femaleDogs: this.state.femaleDogs,
+            //     traffic: this.state.traffic,
+            //     publicTransport: this.state.publicTransport,
+            //     car: this.state.car
+            // },
+            aboutMe: this.state.aboutMe
+        }).then(result => {
+            console.log(result);
+        });
     }
 
     _inputChangeHandler(key, newValue) {
         this.setState({
             [key]: newValue
+        });
+        // this.setState({
+        //     character: {
+        //         fightGamer: newValue
+        //     }
+        // });
+        // console.log("tscfg: ", this.state.character.fightGamer);
+    }
+
+    _sliderChangeHandler(key, newValue) {
+        this.setState({
+            character: {
+                [key]: newValue
+            }
         });
     }
 
@@ -158,6 +354,18 @@ class DogProfile extends Component {
         const newGetsAlongwith = { ...this.state.getsAlongWith };
         newGetsAlongwith[key] = !newGetsAlongwith[key];
         this.setState({ getsAlongWith: newGetsAlongwith });
+    }
+
+    _restrictionsChangeHandler(key) {
+        const newRestriction = { ...this.state.restrictions };
+        newRestriction[key] = !newRestriction[key];
+        this.setState({ restrictions: newRestriction });
+    }
+
+    _characterChangeHandler(key) {
+        const newCharacter = { ...this.state.character };
+        newCharacter[key] = !newCharacter[key];
+        this.setState({ character: newCharacter });
     }
 }
 

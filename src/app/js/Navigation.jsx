@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = props => {
     return (
@@ -14,6 +14,14 @@ const Navigation = props => {
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/profile">
                                 Profile
+                            </Link>
+                        </span>
+                    )}
+                    {props.user && (
+                        <span>
+                            &nbsp; &nbsp; &nbsp;
+                            <Link className="link nav-link" to="/dog/profile">
+                                Dog Profile
                             </Link>
                         </span>
                     )}
@@ -37,7 +45,7 @@ const Navigation = props => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Navigation
+export default Navigation;

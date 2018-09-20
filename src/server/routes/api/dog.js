@@ -41,8 +41,8 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         //     publicTransport: dog.restrictions.publicTransport,
         //     car: dog.restrictions.car
         // },
-        aboutMe: dog.aboutMe,
-        dogPictures: dog.dogPictures
+        aboutMe: dog.aboutMe
+        // dogPictures: dog.dogPictures
     });
     console.log(newDog);
 
