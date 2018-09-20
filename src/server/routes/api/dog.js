@@ -8,6 +8,7 @@ const { checkLoggedIn } = require("../../utils/middleware");
 // Create dog profile
 router.post("/new", checkLoggedIn, (req, res, next) => {
     const dog = req.body;
+    console.log("dgw", dog);
 
     // oder Fehler einfach im frontend abfangen!
     if (req.body.getsAlongWith && !["dogs", "cats", "kids"].includes(dog.getsAlongWith))
@@ -17,14 +18,32 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         user: req.user._id,
         name: dog.name,
         age: dog.age,
-        breed: dog.breed
-        // getsAlongWith: dog.getsAlongWith
-        // character: character
-        // weight: weight,
-        // restrictions: restrictions,
-        // aboutMe: aboutMe,
-        // dogPictures: dogPictures
+        breed: dog.breed,
+        getsAlongWith: {
+            kids: dog.getsAlongWith.kids,
+            dogs: dog.getsAlongWith.dogs,
+            cats: dog.getsAlongWith.cats
+        },
+        character: {
+            courage: dog.character.courage,
+            agility: dog.character.agility,
+            stubborn: dog.character.stubborn,
+            water: dog.character.water,
+            snuggly: dog.character.snuggly,
+            fightGamer: dog.character.fightGamer
+        },
+        weight: dog.weight,
+        restrictions: {
+            maleDogs: dog.restrictions.maleDogs,
+            femaleDogs: dog.restrictions.femaleDogs,
+            traffic: dog.restrictions.traffic,
+            publicTransport: dog.restrictions.publicTransport,
+            car: dog.restrictions.car
+        },
+        aboutMe: dog.aboutMe,
+        dogPictures: dog.dogPictures
     });
+    console.log(newDog);
 
     // Save new instance of Dog to Database
     newDog
@@ -52,8 +71,6 @@ router.get("/all", checkLoggedIn, (req, res, next) => {
         .catch(error => {
             next(error);
         });
-
-    console.log("Hallo");
 });
 
 module.exports = router;
