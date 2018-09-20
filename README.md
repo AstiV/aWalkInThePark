@@ -3,7 +3,7 @@
 New to Berlin?
 This App is the solution for dog people looking for nice places to go for walks and other dog people to go with.
 
-<!-- ![Dogs in the Woods](https://github.com/AstiV/ChainRXN/blob/master/images/Screenshot.png) -->
+![Dogs in the Woods](https://github.com/AstiV/aWalkInThePark/blob/master/img/Dogs.jpg)
 
 ## Created with a React + express starter template (by Lukas)
 
