@@ -7,7 +7,8 @@ import Auth from "./Auth";
 import Home from "./Home";
 import Navigation from "./Navigation";
 import Profile from "./Profile";
-import DogProfile from "./DogProfile";
+import DogProfile from "./DogProfile/index";
+import NewDogProfile from "./DogProfile/New";
 import NotFound from "./NotFound";
 import api from "./utils/api";
 
@@ -39,6 +40,11 @@ class Application extends React.Component {
                             exact
                             path="/dog/profile"
                             render={() => <DogProfile user={this.state.user} />}
+                        />
+                        <Route
+                            exact
+                            path="/dog/profile/new"
+                            render={() => <NewDogProfile user={this.state.user} />}
                         />
                         <Route
                             path="/auth"

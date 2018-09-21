@@ -31,7 +31,7 @@ class Auth extends Component {
                     exact
                     path="/auth/sign-up"
                     render={() => (
-                        <SignUp
+                        <SignUp       
                             handleInputChange={this._handleInputChange}
                             email={this.state.email}
                             password={this.state.password}

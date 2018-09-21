@@ -20,27 +20,10 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         name: dog.name,
         age: dog.age,
         breed: dog.breed,
-        // getsAlongWith: {
-        //     kids: dog.getsAlongWith.kids,
-        //     dogs: dog.getsAlongWith.dogs,
-        //     cats: dog.getsAlongWith.cats
-        // },
-        // character: {
-        //     courage: dog.character.courage,
-        //     agility: dog.character.agility,
-        //     stubborn: dog.character.stubborn,
-        //     water: dog.character.water,
-        //     snuggly: dog.character.snuggly,
-        //     fightGamer: dog.character.fightGamer
-        // },
+        getsAlongWith: dog.getsAlongWith,
+        character: dog.character,
         weight: dog.weight,
-        // restrictions: {
-        //     maleDogs: dog.restrictions.maleDogs,
-        //     femaleDogs: dog.restrictions.femaleDogs,
-        //     traffic: dog.restrictions.traffic,
-        //     publicTransport: dog.restrictions.publicTransport,
-        //     car: dog.restrictions.car
-        // },
+        restrictions: dog.restrictions,
         aboutMe: dog.aboutMe
         // dogPictures: dog.dogPictures
     });
