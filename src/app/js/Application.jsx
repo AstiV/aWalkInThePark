@@ -5,10 +5,11 @@ import jwtDecode from "jwt-decode";
 
 import Auth from "./Auth";
 import Home from "./Home";
-import Navigation from "./Navigation";
+import DogProfile from "./DogProfile";
 import Profile from "./Profile";
-import DogProfile from "./DogProfile/index";
-import NewDogProfile from "./DogProfile/New";
+
+import Navigation from "./Navigation";
+import NewDogProfile from "./DogProfile/NewDogProfile";
 import NotFound from "./NotFound";
 import api from "./utils/api";
 
@@ -34,18 +35,10 @@ class Application extends React.Component {
                 <div>
                     <Navigation user={this.state.user} />
                     <Switch>
+                        // first level navigation : only path / NOT exact path!!
                         <Route exact path="/" render={() => <Home user={this.state.user} />} />
-                        <Route exact path="/profile" render={() => <Profile user={this.state.user} />} />
-                        <Route
-                            exact
-                            path="/dog/profile"
-                            render={() => <DogProfile user={this.state.user} />}
-                        />
-                        <Route
-                            exact
-                            path="/dog/profile/new"
-                            render={() => <NewDogProfile user={this.state.user} />}
-                        />
+                        <Route path="/profile" render={() => <Profile user={this.state.user} />} />
+                        <Route path="/dog" render={() => <DogProfile user={this.state.user} />} />
                         <Route
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}

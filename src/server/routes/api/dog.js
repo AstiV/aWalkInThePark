@@ -20,7 +20,7 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         name: dog.name,
         age: dog.age,
         breed: dog.breed,
-        getsAlongWith: dog.getsAlongWith,
+        // getsAlongWith: dog.getsAlongWith,
         character: dog.character,
         weight: dog.weight,
         restrictions: dog.restrictions,

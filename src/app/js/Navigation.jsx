@@ -20,8 +20,8 @@ const Navigation = props => {
                     {props.user && (
                         <span>
                             &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/dog/profile">
-                                Dog Profile
+                            <Link className="link nav-link" to="/dog/profile/all">
+                                All My Dogs
                             </Link>
                         </span>
                     )}

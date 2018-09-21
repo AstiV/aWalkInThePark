@@ -11,11 +11,11 @@ class NewDogProfile extends Component {
             name: "",
             age: "",
             breed: "",
-            getsAlongWith: {
-                kids: false,
-                dogs: false,
-                cats: false
-            },
+            // getsAlongWith: {
+            //     kids: false,
+            //     dogs: false,
+            //     cats: false
+            // },
             character: {
                 courage: 1,
                 agility: 1,
@@ -39,13 +39,11 @@ class NewDogProfile extends Component {
         };
 
         this._inputChangeHandler = this._inputChangeHandler.bind(this);
-        this._getsAlongWithChangeHandler = this._getsAlongWithChangeHandler.bind(this);
+        // this._getsAlongWithChangeHandler = this._getsAlongWithChangeHandler.bind(this);
         this._submitData = this._submitData.bind(this);
     }
 
     render() {
-        if (!this.props.user) return <Redirect to="/auth/sign-in" />; // this is actually the protection
-
         return (
             <div className="container">
                 {/* TODO Render Dog Picture, and Name */}
@@ -77,7 +75,7 @@ class NewDogProfile extends Component {
                     onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                 />
                 <br />
-                <h3>Who does your Dog get along with?</h3>
+                {/* <h3>Who does your Dog get along with?</h3>
                 <label htmlFor="">
                     <input
                         type="checkbox"
@@ -103,7 +101,7 @@ class NewDogProfile extends Component {
                         onChange={evt => this._getsAlongWithChangeHandler(`cats`)}
                     />
                     Cats
-                </label>
+                </label> */}
                 <br />
                 <h3>Your Dog's Character</h3>
                 <label htmlFor="">
@@ -318,7 +316,7 @@ class NewDogProfile extends Component {
             name: this.state.name,
             age: this.state.age,
             breed: this.state.breed,
-            getsAlongWith: this.state.getsAlongWith,
+            // getsAlongWith: this.state.getsAlongWith,
             character: this.state.character,
             weight: this.state.weight,
             restrictions: this.state.restrictions,

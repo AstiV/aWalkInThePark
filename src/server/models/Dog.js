@@ -19,22 +19,22 @@ const dogSchema = new Schema({
         type: String
     },
 
-    getsAlongWith: {
-        kids: {
-            type: Boolean,
-            default: false
-        },
+    // getsAlongWith: {
+    //     kids: {
+    //         type: Boolean,
+    //         default: false
+    //     },
 
-        dogs: {
-            type: Boolean,
-            default: false
-        },
+    //     dogs: {
+    //         type: Boolean,
+    //         default: false
+    //     },
 
-        cats: {
-            type: Boolean,
-            default: false
-        }
-    },
+    //     cats: {
+    //         type: Boolean,
+    //         default: false
+    //     }
+    // },
 
     character: {
         courage: {
