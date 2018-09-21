@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 
 import NewDogProfile from "./NewDogProfile";
 import AllDogs from "./AllDogs";
+import SingleDogProfile from "./SingleDogProfile";
 
 // create the state
 // this.state.listOfAllDogsFromUser => api.get(localhost:3000/api/dog/all)
@@ -53,14 +54,25 @@ class DogProfile extends Component {
     render() {
         if (!this.props.user) return <Redirect to="/auth/sign-in" />; // this is actually the protection
         return (
-            <Switch>
-                <Route exact path="/dog/profile/all" render={() => <AllDogs user={this.state.user} />} />
-                <Route
-                    exact
-                    path="/dog/profile/new"
-                    render={() => <NewDogProfile user={this.state.user} />}
-                />
-            </Switch>
+            <div>
+                <Switch>
+                    <Route
+                        exact
+                        path="/dog/profile/all"
+                        render={() => <AllDogs user={this.state.user} />}
+                    />
+                    <Route
+                        exact
+                        path="/dog/profile/new"
+                        render={() => <NewDogProfile user={this.state.user} />}
+                    />
+                    <Route
+                        exact
+                        path="/dog/profile/:id"
+                        render={() => <SingleDogProfile user={this.state.user} />}
+                    />
+                </Switch>
+            </div>
         );
     }
 }
