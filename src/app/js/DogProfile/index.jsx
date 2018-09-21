@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
 
-import api from "../utils/api";
-
 import NewDogProfile from "./NewDogProfile";
 import AllDogs from "./AllDogs";
 

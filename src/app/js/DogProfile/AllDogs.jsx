@@ -1,6 +1,8 @@
 // Renders all dogs of the logged-in User
 
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import api from "../utils/api";
 
 class AllDogs extends Component {
@@ -31,6 +33,9 @@ class AllDogs extends Component {
                         <h2>Name: {d.name}</h2>
                         <p>Breed: {d.breed}</p>
                         <p>Age: {d.age}</p>
+                        <Link className="link" to="/dog/profile">
+                            Show Profile
+                        </Link>
                     </div>
                 );
             });
