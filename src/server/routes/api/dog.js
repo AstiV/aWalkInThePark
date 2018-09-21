@@ -71,6 +71,7 @@ router.get("/list", checkLoggedIn, (req, res, next) => {
 // Read a single dog profile
 router.get("/profile/:id", checkLoggedIn, (req, res, next) => {
     const dogId = req.params.id;
+    console.log(dogId);
 
     Dog.findById(dogId)
         .then(dog => {

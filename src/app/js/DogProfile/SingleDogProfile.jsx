@@ -14,13 +14,14 @@ class SingleDogProfile extends Component {
     }
 
     componentDidMount() {
-        api.get("/api/dog/profile/:id")
+        api.get(`/api/dog/profile/${this.props.match.params.id}`)
             .then(data => {
                 console.log("ID: ", this.props.match.params.id);
                 console.log("PARAMS: ", this.props.match.params);
                 console.log("DATA: ", data);
                 this.setState({
-                    id: this.props.match.params.id
+                    // id: this.props.match.params.id,
+                    dogData: data
                 });
                 console.log("ID in state: ", this.state.id);
                 console.log("DOG DATA IN STATE: ", this.state.dogData);
