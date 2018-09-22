@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import DatePicker from "react-datepicker";
+import api from "../utils/api";
+
 class NewWalk extends Component {
     constructor(props) {
         super(props);
@@ -67,24 +70,13 @@ class NewWalk extends Component {
     }
 
     _submitData() {
-        // console.log("submitting Data", this.state);
-        // api.post('/api/dog/new', {
-        //     profession: this.state.profession,
-        //     age: this.state.age,
-        //     favoriteFood: this.state.favoriteFood,
-        //     ...
-        // })
-        api.post("/api/dog/new", {
-            name: this.state.name,
-            age: this.state.age,
-            breed: this.state.breed,
-            gender: this.state.gender,
-            // getsAlongWith: this.state.getsAlongWith,
-            character: this.state.character,
-            weight: this.state.weight,
-            restrictions: this.state.restrictions,
-            aboutMe: this.state.aboutMe
-            // dogPictures: dog.dogPictures ??
+        api.post("/api/walk/new", {
+            title: this.state.title,
+            date: this.state.date,
+            location: this.state.location,
+            // participants: [],
+            // dogs: [],
+            public: this.state.public
         })
             .then(result => {
                 console.log(result);
