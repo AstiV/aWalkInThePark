@@ -27,8 +27,8 @@ const walkSchema = new Schema({
     ],
 
     public: {
-        type: Boolean,
-        default: false
+        type: String,
+        default: "private"
     }
 });
 

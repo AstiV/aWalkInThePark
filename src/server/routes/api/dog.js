@@ -8,7 +8,6 @@ const { checkLoggedIn } = require("../../utils/middleware");
 // Create dog profile
 router.post("/new", checkLoggedIn, (req, res, next) => {
     const dog = req.body;
-    console.log("dgw", dog);
 
     // oder Fehler einfach im frontend abfangen!
     // if (req.body.getsAlongWith && !["dogs", "cats", "kids"].includes(dog.getsAlongWith))
@@ -72,7 +71,6 @@ router.get("/list", checkLoggedIn, (req, res, next) => {
 // Read a single dog profile
 router.get("/profile/:id", checkLoggedIn, (req, res, next) => {
     const dogId = req.params.id;
-    console.log(dogId);
 
     Dog.findById(dogId)
         .then(dog => {

@@ -33,6 +33,14 @@ const Navigation = props => {
                             </Link>
                         </span>
                     )}
+                    {props.user && (
+                        <span>
+                            &nbsp; &nbsp; &nbsp;
+                            <Link className="link nav-link" to="/walk/all">
+                                All my Walks
+                            </Link>
+                        </span>
+                    )}
                 </div>
                 <div>
                     {props.user ? (

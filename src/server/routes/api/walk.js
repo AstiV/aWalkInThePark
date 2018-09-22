@@ -9,7 +9,7 @@ const { checkLoggedIn } = require("../../utils/middleware");
 // Create walk event
 router.post("/new", checkLoggedIn, (req, res, next) => {
     const walk = req.body;
-    const creator = req.user;
+    console.log("REQ USER: ", req.user);
 
     let newWalk = new Walk({
         title: walk.title,
@@ -17,7 +17,7 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         location: walk.location,
 
         // This User is creator of walk
-        user: creator._id
+        user: req.user._id
 
         // // These users are only participating
         // // Get Id of user from dog profile, that is clicked on
@@ -26,17 +26,19 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         // // Get Ids of dogs of both owners
         // dogs: [req.dog._id]
     });
-    console.log(newWalk);
+    console.log("After CREATION: ", newWalk);
+    console.log("REQ.USER: ", req.user);
 
     // Save new instance of Walk to Database
     newWalk
         .save()
         .then(walk => {
-            console.log(walk);
+            console.log("walk in Promise: ", walk);
             User.findByIdAndUpdate(
                 { _id: walk.user },
                 { $push: { walks: walk._id } },
-                { new: true }
+                { new: true },
+                console.log("WALK.USER: ", walk.user)
             ).then(updatedUser => {
                 console.log("success", updatedUser);
             });
@@ -70,19 +72,19 @@ router.get("/list", checkLoggedIn, (req, res, next) => {
         });
 });
 
-// // Read a single walk profile
-// router.get("/walk/:id", checkLoggedIn, (req, res, next) => {
-//     const walkId = req.params._id;
-//     console.log("Walk Id: ", walkId);
+// Read a single walk
+router.get("/walk/:id", checkLoggedIn, (req, res, next) => {
+    const walkId = req.params.id;
+    console.log("Walk Id: ", walkId);
 
-//     Walk.findOne({ id: walk })
-//         .then(walk => {
-//             console.log("Found a Walk!", walk);
-//             res.send(walk);
-//         })
-//         .catch(error => {
-//             next(error);
-//         });
-// });
+    Walk.findById(walkId)
+        .then(walk => {
+            console.log("Found a Walk!", walk);
+            res.send(walk);
+        })
+        .catch(error => {
+            next(error);
+        });
+});
 
 module.exports = router;
