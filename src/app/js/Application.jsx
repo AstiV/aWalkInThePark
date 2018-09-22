@@ -6,10 +6,10 @@ import jwtDecode from "jwt-decode";
 import Auth from "./Auth";
 import Home from "./Home";
 import DogProfile from "./DogProfile";
+import Walk from "./Walk";
 import Profile from "./Profile";
 
 import Navigation from "./Navigation";
-import NewDogProfile from "./DogProfile/NewDogProfile";
 import NotFound from "./NotFound";
 import api from "./utils/api";
 
@@ -39,6 +39,7 @@ class Application extends React.Component {
                         <Route exact path="/" render={() => <Home user={this.state.user} />} />
                         <Route path="/profile" render={() => <Profile user={this.state.user} />} />
                         <Route path="/dog" render={() => <DogProfile user={this.state.user} />} />
+                        <Route path="/walk" render={() => <Walk user={this.state.user} />} />
                         <Route
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
