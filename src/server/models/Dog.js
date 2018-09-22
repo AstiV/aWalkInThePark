@@ -19,6 +19,11 @@ const dogSchema = new Schema({
         type: String
     },
 
+    gender: {
+        type: String,
+        enum: ["male", "female"]
+    },
+
     // getsAlongWith: {
     //     kids: {
     //         type: Boolean,

@@ -16,6 +16,7 @@ class NewDogProfile extends Component {
             //     dogs: false,
             //     cats: false
             // },
+            gender: "",
             character: {
                 courage: 1,
                 agility: 1,
@@ -54,7 +55,7 @@ class NewDogProfile extends Component {
                 <br />
                 {this.props.user.email}
                 <br /> */}
-                <h1>Edit your Dog's Profile Page</h1>
+                <h1>Create your Dog's Profile Page</h1>
                 <input
                     type="text"
                     value={this.state.name}
@@ -75,6 +76,26 @@ class NewDogProfile extends Component {
                     onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                 />
                 <br />
+                <h3>Gender</h3>
+                <label>
+                    <input
+                        type="radio"
+                        value="male"
+                        checked={this.state.gender === "male"}
+                        onChange={evt => this._inputChangeHandler("gender", evt.target.value)}
+                    />
+                    Male
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        value="female"
+                        checked={this.state.gender === "female"}
+                        onChange={evt => this._inputChangeHandler("gender", evt.target.value)}
+                    />
+                    Female
+                </label>
                 {/* <h3>Who does your Dog get along with?</h3>
                 <label htmlFor="">
                     <input
@@ -316,6 +337,7 @@ class NewDogProfile extends Component {
             name: this.state.name,
             age: this.state.age,
             breed: this.state.breed,
+            gender: this.state.gender,
             // getsAlongWith: this.state.getsAlongWith,
             character: this.state.character,
             weight: this.state.weight,

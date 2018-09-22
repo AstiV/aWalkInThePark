@@ -20,6 +20,7 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         name: dog.name,
         age: dog.age,
         breed: dog.breed,
+        gender: dog.gender,
         // getsAlongWith: dog.getsAlongWith,
         character: dog.character,
         weight: dog.weight,
@@ -75,7 +76,6 @@ router.get("/profile/:id", checkLoggedIn, (req, res, next) => {
 
     Dog.findById(dogId)
         .then(dog => {
-            console.log("Found a Dog!", dog);
             res.send(dog);
         })
         .catch(error => {
