@@ -11,8 +11,8 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
     console.log("dgw", dog);
 
     // oder Fehler einfach im frontend abfangen!
-    if (req.body.getsAlongWith && !["dogs", "cats", "kids"].includes(dog.getsAlongWith))
-        return res.status(400).send({ error: "Invalid value for getsAlongWith" });
+    // if (req.body.getsAlongWith && !["dogs", "cats", "kids"].includes(dog.getsAlongWith))
+    //     return res.status(400).send({ error: "Invalid value for getsAlongWith" });
 
     // TODO - extract creation of new Dog in function
     let newDog = new Dog({

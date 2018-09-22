@@ -8,7 +8,6 @@ class SingleDogProfile extends Component {
         super(props);
 
         this.state = {
-            id: "",
             dogData: ""
         };
     }
@@ -16,14 +15,11 @@ class SingleDogProfile extends Component {
     componentDidMount() {
         api.get(`/api/dog/profile/${this.props.match.params.id}`)
             .then(data => {
-                console.log("ID: ", this.props.match.params.id);
-                console.log("PARAMS: ", this.props.match.params);
                 console.log("DATA: ", data);
                 this.setState({
                     // id: this.props.match.params.id,
                     dogData: data
                 });
-                console.log("ID in state: ", this.state.id);
                 console.log("DOG DATA IN STATE: ", this.state.dogData);
             })
             .catch(err => {
@@ -31,10 +27,24 @@ class SingleDogProfile extends Component {
             });
     }
 
+    // aboutMe: "Snuggly whirlwind"
+    // age: "7"
+    // breed: "Bichon Frisé"
+    // character: {courage: 5, agility: 1, stubborn: 5, water: 4, snuggly: 5, …}
+    // dogPictures: []
+    // name: "Bibi"
+    // restrictions: {maleDogs: false, femaleDogs: true, traffic: false, publicTransport: true, car: false}
+    // user: "5ba5faeb0cdf27aedb5b7484"
+    // weight: "light"
+    // __v: 0
+    // _id: "5ba5fc0f0cdf27aedb5b7485"
+    // __proto__: Object
+
     render() {
         return (
-            <div>
+            <div className="container">
                 <h1>{this.state.dogData.name}</h1>
+                
             </div>
         );
     }

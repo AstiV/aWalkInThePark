@@ -196,7 +196,7 @@ class NewDogProfile extends Component {
                 </label>
                 <br />
                 <label htmlFor="">
-                    Fighting Games Player
+                    Rather no Physical Contact
                     <input
                         type="range"
                         defaultValue={this.state.character.fightGamer}
@@ -210,7 +210,7 @@ class NewDogProfile extends Component {
                         max="5"
                         step="1"
                     />
-                    Rather no Physical Contact
+                    Fighting Games Player
                 </label>
                 <br />
                 <h3>Weight</h3>

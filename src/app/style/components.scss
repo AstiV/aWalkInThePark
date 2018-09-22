@@ -62,3 +62,8 @@
         color: lighten($primary-color, 8%);
     }
 }
+
+.profilepicture img {
+    width: 10rem;
+    border-radius: 50%;
+}
