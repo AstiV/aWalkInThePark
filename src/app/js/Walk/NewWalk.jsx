@@ -42,6 +42,7 @@ class NewWalk extends Component {
                     <DatePicker
                         selected={this.state.startDate}
                         onChange={this._dateChangeHandler}
+                        showTimeSelect
                         timeFormat="HH:mm"
                     />
                     <input
