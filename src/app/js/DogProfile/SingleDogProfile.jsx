@@ -8,7 +8,18 @@ class SingleDogProfile extends Component {
         super(props);
 
         this.state = {
-            dogData: ""
+            dogData: "",
+            agility: "",
+            courage: "",
+            fightGamer: "",
+            snuggly: "",
+            stubborn: "",
+            water: "",
+            maleDogs: "",
+            femaleDogs: "",
+            traffic: "",
+            publicTransport: "",
+            car: ""
         };
     }
 
@@ -18,7 +29,18 @@ class SingleDogProfile extends Component {
                 console.log("DATA: ", data);
                 this.setState({
                     // id: this.props.match.params.id,
-                    dogData: data
+                    dogData: data,
+                    agility: data.character.agility,
+                    courage: data.character.courage,
+                    fightGamer: data.character.fightGamer,
+                    snuggly: data.character.snuggly,
+                    stubborn: data.character.stubborn,
+                    water: data.character.water,
+                    maleDogs: data.restrictions.maleDogs,
+                    femaleDogs: data.restrictions.femaleDogs,
+                    traffic: data.restrictions.traffic,
+                    publicTransport: data.restrictions.publicTransport,
+                    car: data.restrictions.car
                 });
                 console.log("DOG DATA IN STATE: ", this.state.dogData);
             })
@@ -27,24 +49,32 @@ class SingleDogProfile extends Component {
             });
     }
 
-    // aboutMe: "Snuggly whirlwind"
-    // age: "7"
-    // breed: "Bichon Frisé"
-    // character: {courage: 5, agility: 1, stubborn: 5, water: 4, snuggly: 5, …}
-    // dogPictures: []
-    // name: "Bibi"
-    // restrictions: {maleDogs: false, femaleDogs: true, traffic: false, publicTransport: true, car: false}
-    // user: "5ba5faeb0cdf27aedb5b7484"
-    // weight: "light"
-    // __v: 0
-    // _id: "5ba5fc0f0cdf27aedb5b7485"
-    // __proto__: Object
+    // restrictions: {maleDogs: false, femaleDogs: false, traffic: true, publicTransport: true, car: false}
 
     render() {
         return (
             <div className="container">
                 <h1>{this.state.dogData.name}</h1>
-                
+                <div className="info-wrapper">
+                    <p>Age: {this.state.dogData.age}</p>
+                    <p>Breed: {this.state.dogData.breed}</p>
+                    <p>Gender: {this.state.dogData.gender}</p>
+                    <p>Weight: {this.state.dogData.weight}</p>
+                </div>
+                <h3>Character</h3>
+                <p>Agility {this.state.agility}</p>
+                <p>Courage {this.state.courage}</p>
+                <p>Likes fighting Games {this.state.fightGamer}</p>
+                <p>Snuggly {this.state.snuggly}</p>
+                <p>Stubborn {this.state.stubborn}</p>
+                <p>Likes Water {this.state.water}</p>
+
+                <h3>Restrictions</h3>
+                {this.state.maleDogs && <p>Male Dogs {this.state.maleDogs}</p>}
+                {this.state.femaleDogs && <p>Female Dogs {this.state.femaleDogs}</p>}
+                {this.state.traffic && <p>Traffic {this.state.traffic}</p>}
+                {this.state.publicTransport && <p>Public Transport {this.state.publicTransport}</p>}
+                {this.state.car && <p>Car {this.state.car}</p>}
             </div>
         );
     }
