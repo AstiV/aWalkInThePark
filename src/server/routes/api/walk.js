@@ -13,7 +13,8 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
 
     let newWalk = new Walk({
         title: walk.title,
-        // date: walk.date,
+        startDate: walk.startDate,
+        time: walk.time,
         location: walk.location,
 
         // This User is creator of walk

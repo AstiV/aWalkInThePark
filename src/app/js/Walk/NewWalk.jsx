@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import DatePicker from "react-datepicker";
+import moment from "moment";
+import "react-datepicker/dist/react-datepicker.css";
+
 import api from "../utils/api";
 
 class NewWalk extends Component {
@@ -9,7 +12,9 @@ class NewWalk extends Component {
 
         this.state = {
             title: "",
+            startDate: moment(),
             date: "",
+            time: "",
             location: "",
             participants: [],
             dogs: [],
@@ -18,9 +23,11 @@ class NewWalk extends Component {
 
         this._inputChangeHandler = this._inputChangeHandler.bind(this);
         this._submitData = this._submitData.bind(this);
+        this._dateChangeHandler = this._dateChangeHandler.bind(this);
     }
 
     render() {
+        console.log("Show me the DATE: ", this.state.startDate);
         return (
             <div className="container">
                 <h1>Create a new Walk</h1>
@@ -30,6 +37,21 @@ class NewWalk extends Component {
                     placeholder="title"
                     onChange={evt => this._inputChangeHandler("title", evt.target.value)}
                 />
+                <div>
+                    <h3>Select Date and Time</h3>
+                    <DatePicker
+                        selected={this.state.startDate}
+                        onChange={this._dateChangeHandler}
+                        timeFormat="HH:mm"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.time}
+                        placeholder="time"
+                        onChange={evt => this._inputChangeHandler("time", evt.target.value)}
+                    />
+                </div>
+                <h3>Location</h3>
                 <input
                     type="text"
                     value={this.state.location}
@@ -69,10 +91,17 @@ class NewWalk extends Component {
         });
     }
 
+    _dateChangeHandler(date) {
+        this.setState({
+            startDate: date
+        });
+    }
+
     _submitData() {
         api.post("/api/walk/new", {
             title: this.state.title,
-            date: this.state.date,
+            startDate: this.state.startDate,
+            time: this.state.time,
             location: this.state.location,
             // participants: [],
             // dogs: [],

@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const walkSchema = new Schema({
     title: String,
-    date: Date,
+    startDate: Date,
+    time: String,
     location: String,
 
     user: {

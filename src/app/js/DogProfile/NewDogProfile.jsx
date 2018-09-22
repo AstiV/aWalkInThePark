@@ -359,11 +359,11 @@ class NewDogProfile extends Component {
         });
     }
 
-    _getsAlongWithChangeHandler(key) {
-        const newGetsAlongwith = { ...this.state.getsAlongWith };
-        newGetsAlongwith[key] = !newGetsAlongwith[key];
-        this.setState({ getsAlongWith: newGetsAlongwith });
-    }
+    // _getsAlongWithChangeHandler(key) {
+    //     const newGetsAlongwith = { ...this.state.getsAlongWith };
+    //     newGetsAlongwith[key] = !newGetsAlongwith[key];
+    //     this.setState({ getsAlongWith: newGetsAlongwith });
+    // }
 
     _restrictionsChangeHandler(key) {
         const newRestriction = { ...this.state.restrictions };
