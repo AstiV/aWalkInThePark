@@ -11,6 +11,9 @@ const dogSchema = new Schema({
         type: String
     },
 
+    street: String,
+    zip: String,
+
     age: {
         type: String
     },
@@ -23,23 +26,6 @@ const dogSchema = new Schema({
         type: String,
         enum: ["male", "female"]
     },
-
-    // getsAlongWith: {
-    //     kids: {
-    //         type: Boolean,
-    //         default: false
-    //     },
-
-    //     dogs: {
-    //         type: Boolean,
-    //         default: false
-    //     },
-
-    //     cats: {
-    //         type: Boolean,
-    //         default: false
-    //     }
-    // },
 
     character: {
         courage: {

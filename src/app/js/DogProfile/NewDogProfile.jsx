@@ -11,11 +11,8 @@ class NewDogProfile extends Component {
             name: "",
             age: "",
             breed: "",
-            // getsAlongWith: {
-            //     kids: false,
-            //     dogs: false,
-            //     cats: false
-            // },
+            street: "",
+            zip: "",
             gender: "",
             character: {
                 courage: 1,
@@ -48,7 +45,6 @@ class NewDogProfile extends Component {
         return (
             <div className="container">
                 {/* TODO Render Dog Picture */}
-
                 {/* <img src={this.props.user.profilePicture} height="200px" />
                 <br />
                 {this.props.user._id}
@@ -76,6 +72,21 @@ class NewDogProfile extends Component {
                     onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                 />
                 <br />
+                <h3>Address</h3>
+                <input
+                    type="text"
+                    value={this.state.street}
+                    placeholder="Street"
+                    onChange={evt => this._inputChangeHandler("street", evt.target.value)}
+                />
+                <br />
+                <input
+                    type="text"
+                    value={this.state.zip}
+                    placeholder="Zip"
+                    onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
+                />
+                <br />
                 <h3>Gender</h3>
                 <label>
                     <input
@@ -96,33 +107,6 @@ class NewDogProfile extends Component {
                     />
                     Female
                 </label>
-                {/* <h3>Who does your Dog get along with?</h3>
-                <label htmlFor="">
-                    <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.kids}
-                        onChange={evt => this._getsAlongWithChangeHandler(`kids`)}
-                    />
-                    Kids
-                </label>
-                <br />
-                <label htmlFor="">
-                    <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.dogs}
-                        onChange={evt => this._getsAlongWithChangeHandler(`dogs`)}
-                    />
-                    Dogs
-                </label>
-                <br />
-                <label htmlFor="">
-                    <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.cats}
-                        onChange={evt => this._getsAlongWithChangeHandler(`cats`)}
-                    />
-                    Cats
-                </label> */}
                 <br />
                 <h3>Your Dog's Character</h3>
                 <label htmlFor="">
@@ -337,6 +321,8 @@ class NewDogProfile extends Component {
             name: this.state.name,
             age: this.state.age,
             breed: this.state.breed,
+            street: this.state.street,
+            zip: this.state.zip,
             gender: this.state.gender,
             // getsAlongWith: this.state.getsAlongWith,
             character: this.state.character,
@@ -357,13 +343,8 @@ class NewDogProfile extends Component {
         this.setState({
             [key]: newValue
         });
+        console.log("NEW VALUE: ", newValue);
     }
-
-    // _getsAlongWithChangeHandler(key) {
-    //     const newGetsAlongwith = { ...this.state.getsAlongWith };
-    //     newGetsAlongwith[key] = !newGetsAlongwith[key];
-    //     this.setState({ getsAlongWith: newGetsAlongwith });
-    // }
 
     _restrictionsChangeHandler(key) {
         const newRestriction = { ...this.state.restrictions };

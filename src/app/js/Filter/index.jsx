@@ -9,7 +9,7 @@ class Filter extends Component {
         super(props);
 
         this.state = {
-            // zip: "",
+            zip: "",
             age: "",
             breed: "",
             gender: "",
@@ -38,23 +38,23 @@ class Filter extends Component {
         return (
             <div className="container">
                 <h1>Hello, I'm a Filter!</h1>
-                {/* <input
+                <input
                     type="text"
                     value={this.state.zip}
-                    placeholder="zip"
+                    placeholder="Zip Code..."
                     onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
-                /> */}
+                />
                 <input
                     type="number"
                     value={this.state.age}
-                    placeholder="age"
+                    placeholder="Age..."
                     onChange={evt => this._inputChangeHandler("age", evt.target.value)}
                 />
                 <br />
                 <input
                     type="text"
                     value={this.state.breed}
-                    placeholder="breed"
+                    placeholder="Breed..."
                     onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                 />
                 <br />

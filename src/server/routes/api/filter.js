@@ -94,6 +94,7 @@ router.post("/results", checkLoggedIn, (req, res, next) => {
 
     Dog.find({ $or: filterConditions }).then(dogs => {
         //TODO handle character and restrictions stricter $and ??? min max?
+
         if (dogs.length > 0) {
             res.send({ dogs });
         } else {

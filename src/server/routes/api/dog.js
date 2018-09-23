@@ -8,6 +8,7 @@ const { checkLoggedIn } = require("../../utils/middleware");
 // Create dog profile
 router.post("/new", checkLoggedIn, (req, res, next) => {
     const dog = req.body;
+    console.log("Hello from the REQ Body: ", dog);
 
     // oder Fehler einfach im frontend abfangen!
     // if (req.body.getsAlongWith && !["dogs", "cats", "kids"].includes(dog.getsAlongWith))
@@ -17,17 +18,18 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
     let newDog = new Dog({
         user: req.user._id,
         name: dog.name,
+        street: dog.street,
+        zip: dog.zip,
         age: dog.age,
         breed: dog.breed,
         gender: dog.gender,
-        // getsAlongWith: dog.getsAlongWith,
         character: dog.character,
         weight: dog.weight,
         restrictions: dog.restrictions,
         aboutMe: dog.aboutMe
         // dogPictures: dog.dogPictures
     });
-    console.log(newDog);
+    console.log("Hello from the newDog: ", newDog);
 
     // Save new instance of Dog to Database
     newDog
