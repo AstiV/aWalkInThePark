@@ -6,6 +6,7 @@ const { userMiddleware, checkLoggedIn } = require("../../utils/middleware");
 
 const dogRoutes = require("./dog");
 const walkRoutes = require("./walk");
+const filterRoutes = require("./filter");
 
 router.use(userMiddleware);
 
@@ -21,6 +22,7 @@ router.get("/protected", checkLoggedIn, (req, res) => {
 router.use("/auth", authRoutes);
 router.use("/dog", dogRoutes);
 router.use("/walk", walkRoutes);
+router.use("/filter", filterRoutes);
 
 router.use((req, res) => {
     res.status(404).send({ error: "not-found" });
