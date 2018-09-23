@@ -1,21 +1,13 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 
-import api from "../utils/api";
-
-class NewDogProfile extends Component {
+class Filter extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            name: "",
+            zip: "",
             age: "",
             breed: "",
-            // getsAlongWith: {
-            //     kids: false,
-            //     dogs: false,
-            //     cats: false
-            // },
             gender: "",
             character: {
                 courage: 1,
@@ -32,35 +24,21 @@ class NewDogProfile extends Component {
                 traffic: false,
                 publicTransport: false,
                 car: false
-            },
-            aboutMe: ""
-
-            // TODO where are pictures handled?
-            // dogPictures: dog.dogPictures
+            }
         };
 
         this._inputChangeHandler = this._inputChangeHandler.bind(this);
-        // this._getsAlongWithChangeHandler = this._getsAlongWithChangeHandler.bind(this);
         this._submitData = this._submitData.bind(this);
     }
-
     render() {
         return (
             <div className="container">
-                {/* TODO Render Dog Picture */}
-
-                {/* <img src={this.props.user.profilePicture} height="200px" />
-                <br />
-                {this.props.user._id}
-                <br />
-                {this.props.user.email}
-                <br /> */}
-                <h1>Create your Dog's Profile Page</h1>
+                <h1>Hello, I'm a Filter!</h1>
                 <input
                     type="text"
-                    value={this.state.name}
-                    placeholder="name"
-                    onChange={evt => this._inputChangeHandler("name", evt.target.value)}
+                    value={this.state.zip}
+                    placeholder="zip"
+                    onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
                 />
                 <input
                     type="number"
@@ -96,33 +74,6 @@ class NewDogProfile extends Component {
                     />
                     Female
                 </label>
-                {/* <h3>Who does your Dog get along with?</h3>
-                <label htmlFor="">
-                    <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.kids}
-                        onChange={evt => this._getsAlongWithChangeHandler(`kids`)}
-                    />
-                    Kids
-                </label>
-                <br />
-                <label htmlFor="">
-                    <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.dogs}
-                        onChange={evt => this._getsAlongWithChangeHandler(`dogs`)}
-                    />
-                    Dogs
-                </label>
-                <br />
-                <label htmlFor="">
-                    <input
-                        type="checkbox"
-                        value={this.state.getsAlongWith.cats}
-                        onChange={evt => this._getsAlongWithChangeHandler(`cats`)}
-                    />
-                    Cats
-                </label> */}
                 <br />
                 <h3>Your Dog's Character</h3>
                 <label htmlFor="">
@@ -311,14 +262,6 @@ class NewDogProfile extends Component {
                     Cars
                 </label>
                 <br />
-                <h3>About Me</h3>
-                <textarea
-                    cols="50"
-                    rows="5"
-                    value={this.state.aboutMe}
-                    onChange={evt => this._inputChangeHandler("aboutMe", evt.target.value)}
-                />
-                <br />
                 <br />
                 <button onClick={this._submitData}>SUBMIT</button>
             </div>
@@ -327,23 +270,16 @@ class NewDogProfile extends Component {
 
     _submitData() {
         // console.log("submitting Data", this.state);
-        // api.post('/api/dog/new', {
-        //     profession: this.state.profession,
-        //     age: this.state.age,
-        //     favoriteFood: this.state.favoriteFood,
-        //     ...
-        // })
-        api.post("/api/dog/new", {
+        api.post("/api/filter", {
+            zip: this.state.zip,
             name: this.state.name,
             age: this.state.age,
             breed: this.state.breed,
             gender: this.state.gender,
-            // getsAlongWith: this.state.getsAlongWith,
             character: this.state.character,
             weight: this.state.weight,
             restrictions: this.state.restrictions,
             aboutMe: this.state.aboutMe
-            // dogPictures: dog.dogPictures ??
         })
             .then(result => {
                 console.log(result);
@@ -359,12 +295,6 @@ class NewDogProfile extends Component {
         });
     }
 
-    // _getsAlongWithChangeHandler(key) {
-    //     const newGetsAlongwith = { ...this.state.getsAlongWith };
-    //     newGetsAlongwith[key] = !newGetsAlongwith[key];
-    //     this.setState({ getsAlongWith: newGetsAlongwith });
-    // }
-
     _restrictionsChangeHandler(key) {
         const newRestriction = { ...this.state.restrictions };
         newRestriction[key] = !newRestriction[key];
@@ -378,4 +308,4 @@ class NewDogProfile extends Component {
     }
 }
 
-export default NewDogProfile;
+export default Filter;

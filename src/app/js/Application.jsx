@@ -8,6 +8,7 @@ import Home from "./Home";
 import DogProfile from "./DogProfile";
 import Walk from "./Walk";
 import Profile from "./Profile";
+import Filter from "./Filter";
 
 import Navigation from "./Navigation";
 import NotFound from "./NotFound";
@@ -40,6 +41,7 @@ class Application extends React.Component {
                         <Route path="/profile" render={() => <Profile user={this.state.user} />} />
                         <Route path="/dog" render={() => <DogProfile user={this.state.user} />} />
                         <Route path="/walk" render={() => <Walk user={this.state.user} />} />
+                        <Route path="/filter" render={() => <Filter user={this.state.user} />} />
                         <Route
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
