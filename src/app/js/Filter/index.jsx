@@ -10,25 +10,25 @@ class Filter extends Component {
 
         this.state = {
             // zip: "",
-            // age: "",
-            // breed: "",
-            gender: ""
-            // character: {
-            //     courage: 1,
-            //     agility: 1,
-            //     stubborn: 1,
-            //     water: 1,
-            //     snuggly: 1,
-            //     fightGamer: 1
-            // },
-            // weight: "",
-            // restrictions: {
-            //     maleDogs: false,
-            //     femaleDogs: false,
-            //     traffic: false,
-            //     publicTransport: false,
-            //     car: false
-            // }
+            age: "",
+            breed: "",
+            gender: "",
+            character: {
+                courage: 1,
+                agility: 1,
+                stubborn: 1,
+                water: 1,
+                snuggly: 1,
+                fightGamer: 1
+            },
+            weight: "",
+            restrictions: {
+                maleDogs: false,
+                femaleDogs: false,
+                traffic: false,
+                publicTransport: false,
+                car: false
+            }
         };
 
         this._inputChangeHandler = this._inputChangeHandler.bind(this);
@@ -43,7 +43,7 @@ class Filter extends Component {
                     value={this.state.zip}
                     placeholder="zip"
                     onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
-                />
+                /> */}
                 <input
                     type="number"
                     value={this.state.age}
@@ -57,7 +57,7 @@ class Filter extends Component {
                     placeholder="breed"
                     onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                 />
-                <br /> */}
+                <br />
                 <h3>Gender</h3>
                 <label>
                     <input
@@ -78,7 +78,7 @@ class Filter extends Component {
                     />
                     Female
                 </label>
-                {/* <br />
+                <br />
                 <h3>Your Dog's Character</h3>
                 <label htmlFor="">
                     Scaredy-Cat
@@ -264,7 +264,7 @@ class Filter extends Component {
                         onChange={evt => this._restrictionsChangeHandler(`car`)}
                     />
                     Cars
-                </label> */}
+                </label>
                 <br />
                 <br />
                 <button onClick={this._submitData}>SUBMIT</button>
@@ -276,14 +276,13 @@ class Filter extends Component {
         // console.log("submitting Data", this.state);
         api.post("/api/filter/results", {
             // zip: this.state.zip,
-            // name: this.state.name,
-            // age: this.state.age,
-            // breed: this.state.breed,
-            gender: this.state.gender
-            // character: this.state.character,
-            // weight: this.state.weight,
-            // restrictions: this.state.restrictions,
-            // aboutMe: this.state.aboutMe
+            age: this.state.age,
+            breed: this.state.breed,
+            gender: this.state.gender,
+            character: this.state.character,
+            weight: this.state.weight,
+            restrictions: this.state.restrictions,
+            aboutMe: this.state.aboutMe
         })
             .then(result => {
                 console.log(result);
@@ -299,17 +298,17 @@ class Filter extends Component {
         });
     }
 
-    // _restrictionsChangeHandler(key) {
-    //     const newRestriction = { ...this.state.restrictions };
-    //     newRestriction[key] = !newRestriction[key];
-    //     this.setState({ restrictions: newRestriction });
-    // }
+    _restrictionsChangeHandler(key) {
+        const newRestriction = { ...this.state.restrictions };
+        newRestriction[key] = !newRestriction[key];
+        this.setState({ restrictions: newRestriction });
+    }
 
-    // _characterChangeHandler(key) {
-    //     const newCharacter = { ...this.state.character };
-    //     newCharacter[key] = !newCharacter[key];
-    //     this.setState({ character: newCharacter });
-    // }
+    _characterChangeHandler(key) {
+        const newCharacter = { ...this.state.character };
+        newCharacter[key] = !newCharacter[key];
+        this.setState({ character: newCharacter });
+    }
 }
 
 export default withRouter(Filter);
