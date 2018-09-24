@@ -13,6 +13,27 @@ const users = [
         profilePicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537782975/Astrid.jpg",
         dogs: [],
         walks: []
+    },
+    {
+        email: "Sabine",
+        password: bcrypt.hashSync("test", bcrypt.genSaltSync(8), null),
+        profilePicture: "",
+        dogs: [],
+        walks: []
+    },
+    {
+        email: "Ewa",
+        password: bcrypt.hashSync("test", bcrypt.genSaltSync(8), null),
+        profilePicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537789704/Ewa.jpg",
+        dogs: [],
+        walks: []
+    },
+    {
+        email: "Elisa",
+        password: bcrypt.hashSync("test", bcrypt.genSaltSync(8), null),
+        profilePicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537789772/Eli.jpg",
+        dogs: [],
+        walks: []
     }
 ];
 
