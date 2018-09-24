@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 import api from "../utils/api";
 
@@ -58,6 +59,9 @@ class SingleDogProfile extends Component {
                 <div className="profilepicture">
                     <img src={this.state.dogData.dogPicture} alt="" />
                 </div>
+                <Link className="link-button" to={`/walk/new`}>
+                    Schedule a Walk
+                </Link>
                 <h1>{this.state.dogData.name}</h1>
                 <div className="info-wrapper">
                     <p>Age: {this.state.dogData.age}</p>
