@@ -29,7 +29,7 @@ const dogs = [
             car: false
         },
         aboutMe: "Lovliest creature on this planet",
-        dogPictures: ["https://res.cloudinary.com/astridvarga/image/upload/v1537787914/IMG_5157_2.jpg"]
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537787914/IMG_5157_2.jpg"
     },
     {
         // user: "", // here goes some id ?????
@@ -55,7 +55,7 @@ const dogs = [
             car: false
         },
         aboutMe: "",
-        dogPictures: ["https://res.cloudinary.com/astridvarga/image/upload/v1537795585/Guapo.jpg"]
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537795585/Guapo.jpg"
     },
     {
         // user: "", // here goes some id ?????
@@ -81,7 +81,7 @@ const dogs = [
             car: false
         },
         aboutMe: "Let's have a race",
-        dogPictures: ["https://res.cloudinary.com/astridvarga/image/upload/v1537790218/Jacky.jpg"]
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537790218/Jacky.jpg"
     },
     {
         // user: "", // here goes some id ?????
@@ -107,7 +107,7 @@ const dogs = [
             car: false
         },
         aboutMe: "Let's got for a walk",
-        dogPictures: ["https://res.cloudinary.com/astridvarga/image/upload/v1537795712/Ecko.jpg"]
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537795712/Ecko.jpg"
     }
 ];
 

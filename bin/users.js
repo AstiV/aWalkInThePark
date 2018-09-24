@@ -17,7 +17,7 @@ const users = [
     {
         email: "Sabine",
         password: bcrypt.hashSync("test", bcrypt.genSaltSync(8), null),
-        profilePicture: "",
+        profilePicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537798476/Bine.jpg",
         dogs: [],
         walks: []
     },
@@ -31,7 +31,8 @@ const users = [
     {
         email: "Elisa",
         password: bcrypt.hashSync("test", bcrypt.genSaltSync(8), null),
-        profilePicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537789772/Eli.jpg",
+        profilePicture:
+            "https://res.cloudinary.com/astridvarga/image/upload/v1537798694/rian-adi-703009-unsplash.jpg",
         dogs: [],
         walks: []
     }

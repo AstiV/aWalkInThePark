@@ -35,10 +35,8 @@ class DogProfile extends Component {
                 publicTransport: false,
                 car: false
             },
-            aboutMe: ""
-
-            // TODO where are pictures handled?
-            // dogPictures: dog.dogPictures
+            aboutMe: "",
+            dogPicture: ""
         };
     }
     render() {

@@ -40,7 +40,8 @@ class SingleDogProfile extends Component {
                     femaleDogs: data.restrictions.femaleDogs,
                     traffic: data.restrictions.traffic,
                     publicTransport: data.restrictions.publicTransport,
-                    car: data.restrictions.car
+                    car: data.restrictions.car,
+                    dogPicture: data.dogPicture
                 });
                 console.log("DOG DATA IN STATE: ", this.state.dogData);
             })
@@ -54,6 +55,9 @@ class SingleDogProfile extends Component {
     render() {
         return (
             <div className="container">
+                <div className="profilepicture">
+                    <img src={this.state.dogData.dogPicture} alt="" />
+                </div>
                 <h1>{this.state.dogData.name}</h1>
                 <div className="info-wrapper">
                     <p>Age: {this.state.dogData.age}</p>
