@@ -275,7 +275,7 @@ class Filter extends Component {
     _submitData() {
         // console.log("submitting Data", this.state);
         api.post("/api/filter/results", {
-            // zip: this.state.zip,
+            zip: this.state.zip,
             age: this.state.age,
             breed: this.state.breed,
             gender: this.state.gender,

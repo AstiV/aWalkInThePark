@@ -40,6 +40,10 @@ router.post("/results", checkLoggedIn, (req, res, next) => {
         filterConditions.push({ breed: data.breed });
     }
 
+    if (data.zip) {
+        filterConditions.push({ zip: data.zip });
+    }
+
     if (data.gender) {
         filterConditions.push({ gender: data.gender });
     }
