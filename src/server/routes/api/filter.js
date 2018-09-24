@@ -23,7 +23,7 @@ const { checkLoggedIn } = require("../../utils/middleware");
 
 //         res.send({ dogs, genders });
 //     });
-// });
+//// });
 
 router.post("/results", checkLoggedIn, (req, res, next) => {
     console.log("I AM THE BODY: ", req.body);
