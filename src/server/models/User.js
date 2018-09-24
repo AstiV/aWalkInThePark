@@ -15,12 +15,6 @@ const userSchema = new Schema({
         type: String
     },
 
-    address: {
-        street: String,
-        zip: String,
-        city: String
-    },
-
     profilePicture: {
         type: String,
         default:
