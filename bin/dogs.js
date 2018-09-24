@@ -29,7 +29,7 @@ const dogs = [
             car: false
         },
         aboutMe: "Lovliest creature on this planet",
-        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537787914/IMG_5157_2.jpg"
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537801775/IMG_5157_2.jpg"
     },
     {
         // user: "", // here goes some id ?????
