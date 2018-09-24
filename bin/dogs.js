@@ -55,7 +55,7 @@ const dogs = [
             car: false
         },
         aboutMe: "",
-        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537795585/Guapo.jpg"
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537802147/Guapo_1.jpg"
     },
     {
         // user: "", // here goes some id ?????
@@ -107,7 +107,7 @@ const dogs = [
             car: false
         },
         aboutMe: "Let's got for a walk",
-        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537795712/Ecko.jpg"
+        dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537802326/Ecko.jpg"
     }
 ];
 
