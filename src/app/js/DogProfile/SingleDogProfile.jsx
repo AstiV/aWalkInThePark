@@ -20,7 +20,8 @@ class SingleDogProfile extends Component {
             femaleDogs: "",
             traffic: "",
             publicTransport: "",
-            car: ""
+            car: "",
+            user: ""
         };
     }
 
@@ -42,9 +43,13 @@ class SingleDogProfile extends Component {
                     traffic: data.restrictions.traffic,
                     publicTransport: data.restrictions.publicTransport,
                     car: data.restrictions.car,
-                    dogPicture: data.dogPicture
+                    dogPicture: data.dogPicture,
+                    user: data.user,
+                    id: data._id
                 });
                 console.log("DOG DATA IN STATE: ", this.state.dogData);
+                console.log("USER IN STATE: ", this.state.user);
+                console.log("DOG ID: ", this.state.id);
             })
             .catch(err => {
                 console.log(err);
@@ -59,7 +64,10 @@ class SingleDogProfile extends Component {
                 <div className="profilepicture">
                     <img src={this.state.dogData.dogPicture} alt="" />
                 </div>
-                <Link className="link-button" to={`/walk/new`}>
+                <Link
+                    className="link-button"
+                    to={{ pathname: `/walk/new`, state: { user: this.state.id } }}
+                >
                     Schedule a Walk
                 </Link>
                 <h1>{this.state.dogData.name}</h1>
@@ -83,6 +91,9 @@ class SingleDogProfile extends Component {
                 {this.state.traffic && <p>Traffic {this.state.traffic}</p>}
                 {this.state.publicTransport && <p>Public Transport {this.state.publicTransport}</p>}
                 {this.state.car && <p>Car {this.state.car}</p>}
+
+                <h3>My Human</h3>
+                {this.state.user}
             </div>
         );
     }

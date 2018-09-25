@@ -27,6 +27,8 @@ class NewWalk extends Component {
     }
 
     render() {
+        console.log("PROPS: ", this.props);
+        console.log("Show me the DOG: ", this.props.id);
         console.log("Show me the DATE: ", this.state.startDate);
         return (
             <div className="container">
@@ -104,7 +106,7 @@ class NewWalk extends Component {
             startDate: this.state.startDate,
             time: this.state.time,
             location: this.state.location,
-            // participants: [],
+            participants: [],
             // dogs: [],
             public: this.state.public
         })

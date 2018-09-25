@@ -9,6 +9,7 @@ const { checkLoggedIn } = require("../../utils/middleware");
 // Create walk event
 router.post("/new", checkLoggedIn, (req, res, next) => {
     const walk = req.body;
+    console.log("REQ BODY: ", req.body);
     console.log("REQ USER: ", req.user);
 
     let newWalk = new Walk({
@@ -20,9 +21,9 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         // This User is creator of walk
         user: req.user._id
 
-        // // These users are only participating
-        // // Get Id of user from dog profile, that is clicked on
-        // participants: [req.user._id], //?
+        // These users are only participating
+        // Get Id of user from dog profile, that is clicked on
+        // participants: [req.user._id] //?
 
         // // Get Ids of dogs of both owners
         // dogs: [req.dog._id]
@@ -38,8 +39,7 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
             User.findByIdAndUpdate(
                 { _id: walk.user },
                 { $push: { walks: walk._id } },
-                { new: true },
-                console.log("WALK.USER: ", walk.user)
+                { new: true }
             ).then(updatedUser => {
                 console.log("success", updatedUser);
             });
