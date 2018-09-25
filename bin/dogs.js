@@ -6,7 +6,8 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${dbName}`);
 
 const dogs = [
     {
-        // user: "", // here goes some id ?????
+        _id: "5baa840bee032556c625aaf2",
+        user: "5baa840bee032556c625aaf6",
         name: "Bibi",
         street: "Muskauer Straße",
         zip: "10997",
@@ -32,7 +33,8 @@ const dogs = [
         dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537801775/IMG_5157_2.jpg"
     },
     {
-        // user: "", // here goes some id ?????
+        _id: "5baa840bee032556c625aaf3",
+        user: "5baa840bee032556c625aaf9",
         name: "Guapo",
         street: "Leine Straße",
         zip: "12049",
@@ -58,7 +60,8 @@ const dogs = [
         dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537802147/Guapo_1.jpg"
     },
     {
-        // user: "", // here goes some id ?????
+        _id: "5baa840bee032556c625aaf4",
+        user: "5baa840bee032556c625aaf7",
         name: "Jacky",
         street: "Köpenicker Straße",
         zip: "10997",
@@ -84,7 +87,8 @@ const dogs = [
         dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537790218/Jacky.jpg"
     },
     {
-        // user: "", // here goes some id ?????
+        _id: "5baa840bee032556c625aaf5",
+        user: "5baa840bee032556c625aaf8",
         name: "Ecko",
         street: "Muskauer Straße",
         zip: "10996",

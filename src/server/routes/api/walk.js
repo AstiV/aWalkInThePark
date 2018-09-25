@@ -53,6 +53,9 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
 // Read all walks of loggedin User
 router.get("/all", checkLoggedIn, (req, res, next) => {
     Walk.find({ user: req.user._id })
+        // .populate("participants", "email")
+        // .populate("user")
+        // .populate("dogs", "name")
         .then(walk => {
             res.send(walk);
         })
