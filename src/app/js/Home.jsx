@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Walklist from "./Walk/WalkList";
+
 const Home = props => {
     return (
         <div className="container">
@@ -8,6 +10,7 @@ const Home = props => {
             <Link className="link-button" to="/filter">
                 Look for Mates for a Walk
             </Link>
+            <Walklist />
         </div>
     );
 };
