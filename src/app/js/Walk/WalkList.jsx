@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 import api from "../utils/api";
 
@@ -30,8 +31,8 @@ class WalkList extends Component {
                 return (
                     <div key={i}>
                         <h2>{w.title}</h2>
-                        <p>Date: {w.startDate}</p>
-                        <p>Time: {w.time}</p>
+                        <p>Date: {moment(w.startDate).format("DD.MM.YYYY")}</p>
+                        <p>Time: {moment(w.startDate).format("HH:mm")}</p>
                         <p>Location: {w.location}</p>
                         <Link className="link-button" to={`/walk/${this.state.list[i]._id}`}>
                             Show Walk

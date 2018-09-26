@@ -3,6 +3,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import moment from "moment";
+
 import api from "../utils/api";
 
 class AllWalks extends Component {
@@ -32,8 +34,8 @@ class AllWalks extends Component {
                 return (
                     <div className="container" key={i}>
                         <h2>{w.title}</h2>
-                        <p>Date: {w.startDate}</p>
-                        <p>Time: {w.time}</p>
+                        <p>Date: {moment(w.startDate).format("DD.MM.YYYY")}</p>
+                        <p>Time: {moment(w.startDate).format("HH:mm")}</p>
                         <p>Walk Id: {w._id}</p>
                         <p>Creator: {w.user.email}</p>
                         <p>Dog: {w.dogs.id}</p>

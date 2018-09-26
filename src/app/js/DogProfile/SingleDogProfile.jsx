@@ -64,7 +64,9 @@ class SingleDogProfile extends Component {
                 <div className="profilepicture">
                     <img src={this.state.dogData.dogPicture} alt="" />
                 </div>
-                <Link className="link-button" to={{ pathname: `/walk/new/${this.state.id}` }}>
+                <br />
+                <br />
+                <Link className="link-button button" to={{ pathname: `/walk/new/${this.state.id}` }}>
                     Schedule a Walk
                 </Link>
                 <h1>{this.state.dogData.name}</h1>
