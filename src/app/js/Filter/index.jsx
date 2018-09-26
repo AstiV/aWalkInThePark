@@ -40,7 +40,7 @@ class Filter extends Component {
     render() {
         return (
             <div className="container">
-                <h1>Hello, I'm a Filter!</h1>
+                <h1>Look for a fitting Companion</h1>
                 <input
                     type="text"
                     value={this.state.zip}
