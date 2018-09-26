@@ -26,7 +26,7 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         // participants: [req.user._id] //?
 
         // // Get Ids of dogs of both owners
-        // dogs: [req.dog._id]
+        // dogs: [req.body.dog]
     });
     console.log("After CREATION: ", newWalk);
     console.log("REQ.USER: ", req.user);
@@ -55,7 +55,7 @@ router.get("/all", checkLoggedIn, (req, res, next) => {
     Walk.find({ user: req.user._id })
         // .populate("participants", "email")
         // .populate("user")
-        // .populate("dogs", "name")
+        // .populate("dogs")
         .then(walk => {
             res.send(walk);
         })
@@ -77,13 +77,14 @@ router.get("/list", checkLoggedIn, (req, res, next) => {
 });
 
 // Read a single walk
-router.get("/walk/:id", checkLoggedIn, (req, res, next) => {
+router.get("/:id", checkLoggedIn, (req, res, next) => {
     const walkId = req.params.id;
-    console.log("Walk Id: ", walkId);
 
     Walk.findById(walkId)
+        .populate("user")
+        .populate("dogs")
+        .populate("participants")
         .then(walk => {
-            console.log("Found a Walk!", walk);
             res.send(walk);
         })
         .catch(error => {

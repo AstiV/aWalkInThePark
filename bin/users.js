@@ -38,7 +38,7 @@ const users = [
         profilePicture:
             "https://res.cloudinary.com/astridvarga/image/upload/v1537798694/rian-adi-703009-unsplash.jpg",
         dogs: ["5baa840bee032556c625aaf3"],
-        walks: []
+        walks: ["5ddd840bee032556c625aaf9"]
     }
 ];
 

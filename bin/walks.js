@@ -15,6 +15,30 @@ const walks = [
         participants: ["5baa840bee032556c625aaf9"],
         dogs: ["5baa840bee032556c625aaf3"],
         public: "private"
+    },
+
+    {
+        _id: "5ccc840bee032556c625aaf9",
+        title: "Let's go out with a big pack",
+        startDate: "",
+        time: "14:00",
+        location: "Grunewald",
+        user: "5baa840bee032556c625aaf7",
+        participants: ["5baa840bee032556c625aaf9", "5baa840bee032556c625aaf8"],
+        dogs: ["5baa840bee032556c625aaf3", "5baa840bee032556c625aaf5"],
+        public: "public"
+    },
+
+    {
+        _id: "5ddd840bee032556c625aaf9",
+        title: "Trekking",
+        startDate: "",
+        time: "14:00",
+        location: "Brandenburg",
+        user: "5baa840bee032556c625aaf9",
+        participants: [],
+        dogs: [],
+        public: "public"
     }
 ];
 

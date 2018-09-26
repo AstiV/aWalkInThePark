@@ -10,7 +10,7 @@ class AllWalks extends Component {
         super(props);
 
         this.state = {
-            list: ""
+            list: []
         };
     }
     componentDidMount() {
@@ -35,7 +35,8 @@ class AllWalks extends Component {
                         <p>Date: {w.startDate}</p>
                         <p>Time: {w.time}</p>
                         <p>Walk Id: {w._id}</p>
-                        <p>Creator Id: {w.user}</p>
+                        <p>Creator: {w.user.email}</p>
+                        <p>Dog: {w.dogs.id}</p>
                         <Link className="link-button" to={`/walk/${this.state.list[i]._id}`}>
                             Show Walk
                         </Link>

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
+import { withRouter } from "react-router-dom";
 
 import api from "../utils/api";
 
@@ -46,6 +47,7 @@ class NewWalk extends Component {
                         onChange={this._dateChangeHandler}
                         showTimeSelect
                         timeFormat="HH:mm"
+                        dateFormat="DD.MM.YYYY HH:mm"
                     />
                     <input
                         type="text"
@@ -106,8 +108,7 @@ class NewWalk extends Component {
             startDate: this.state.startDate,
             time: this.state.time,
             location: this.state.location,
-            participants: [],
-            // dogs: [],
+            dog: this.props.match.params.id,
             public: this.state.public
         })
             .then(result => {
@@ -119,4 +120,4 @@ class NewWalk extends Component {
     }
 }
 
-export default NewWalk;
+export default withRouter(NewWalk);

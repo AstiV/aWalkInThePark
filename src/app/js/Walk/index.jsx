@@ -29,7 +29,11 @@ class Walk extends Component {
             <div>
                 <Switch>
                     <Route exact path="/walk/all" render={() => <AllWalks user={this.state.user} />} />
-                    <Route exact path="/walk/new" render={() => <NewWalk user={this.state.user} />} />
+                    <Route
+                        exact
+                        path="/walk/new/:id"
+                        render={() => <NewWalk user={this.state.user} />}
+                    />
                     <Route exact path="/walk/:id" render={() => <SingleWalk user={this.state.user} />} />
                 </Switch>
             </div>
