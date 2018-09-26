@@ -48,22 +48,32 @@ class SingleWalk extends Component {
         let dogs;
         let participants;
         if (this.state.walkData) {
-            dogs = this.state.walkData.dogs.map(dog => {
+            dogs = this.state.walkData.dogs.map((dog, i) => {
                 console.log("WALK DATA DOGS", this.state.walkData.dogs);
                 return (
-                    <div>
+                    <div key={i}>
                         <ul>
                             <li>{dog.name}</li>
+                            <li>
+                                <div className="cardprofilepicture">
+                                    <img src={dog.dogPicture} alt="" />
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 );
             });
-            participants = this.state.walkData.participants.map(participant => {
+            participants = this.state.walkData.participants.map((participant, i) => {
                 console.log("WALK DATA PARTICIPANTS", this.state.walkData.participants);
                 return (
-                    <div>
+                    <div key={i}>
                         <ul>
                             <li>{participant.email}</li>
+                            <li>
+                                <div className="cardprofilepicture">
+                                    <img src={participant.profilePicture} alt="" />
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 );
