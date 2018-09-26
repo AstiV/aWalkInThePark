@@ -4,6 +4,8 @@ import { withRouter } from "react-router";
 
 import api from "../utils/api";
 
+import List from "./List";
+
 class Filter extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +30,8 @@ class Filter extends Component {
                 traffic: false,
                 publicTransport: false,
                 car: false
-            }
+            },
+            results: []
         };
 
         this._inputChangeHandler = this._inputChangeHandler.bind(this);
@@ -268,6 +271,7 @@ class Filter extends Component {
                 <br />
                 <br />
                 <button onClick={this._submitData}>SUBMIT</button>
+                <List dogs={this.state.results} />
             </div>
         );
     }
@@ -284,8 +288,9 @@ class Filter extends Component {
             restrictions: this.state.restrictions,
             aboutMe: this.state.aboutMe
         })
-            .then(result => {
-                console.log(result);
+            .then(dogs => {
+                console.log(dogs);
+                this.setState({ results: dogs.filteredDogs });
             })
             .catch(err => {
                 console.log(err.description);

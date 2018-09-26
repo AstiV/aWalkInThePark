@@ -32,8 +32,7 @@ class WalkList extends Component {
                         <h2>{w.title}</h2>
                         <p>Date: {w.startDate}</p>
                         <p>Time: {w.time}</p>
-                        <p>Walk Id: {w._id}</p>
-                        <p>Creator Id: {w.user}</p>
+                        <p>Location: {w.location}</p>
                         <Link className="link-button" to={`/walk/${this.state.list[i]._id}`}>
                             Show Walk
                         </Link>

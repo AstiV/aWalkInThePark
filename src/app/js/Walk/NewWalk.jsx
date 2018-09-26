@@ -28,64 +28,58 @@ class NewWalk extends Component {
     }
 
     render() {
-        console.log("PROPS: ", this.props);
-        console.log("Show me the DOG: ", this.props.id);
         console.log("Show me the DATE: ", this.state.startDate);
         return (
             <div className="container">
                 <h1>Create a new Walk</h1>
-                <input
-                    type="text"
-                    value={this.state.title}
-                    placeholder="title"
-                    onChange={evt => this._inputChangeHandler("title", evt.target.value)}
-                />
-                <div>
-                    <h3>Select Date and Time</h3>
-                    <DatePicker
-                        selected={this.state.startDate}
-                        onChange={this._dateChangeHandler}
-                        showTimeSelect
-                        timeFormat="HH:mm"
-                        dateFormat="DD.MM.YYYY HH:mm"
-                    />
+                <form onSubmit={this._submitData}>
                     <input
                         type="text"
-                        value={this.state.time}
-                        placeholder="time"
-                        onChange={evt => this._inputChangeHandler("time", evt.target.value)}
+                        value={this.state.title}
+                        placeholder="title"
+                        onChange={evt => this._inputChangeHandler("title", evt.target.value)}
                     />
-                </div>
-                <h3>Location</h3>
-                <input
-                    type="text"
-                    value={this.state.location}
-                    placeholder="location"
-                    onChange={evt => this._inputChangeHandler("location", evt.target.value)}
-                />
-                <h3>Public or Private?</h3>
-                <label>
+                    <div>
+                        <h3>Select Date and Time</h3>
+                        <DatePicker
+                            selected={this.state.startDate}
+                            onChange={this._dateChangeHandler}
+                            showTimeSelect
+                            timeFormat="HH:mm"
+                            dateFormat="DD.MM.YYYY HH:mm"
+                        />
+                    </div>
+                    <h3>Location</h3>
                     <input
-                        type="radio"
-                        value="public"
-                        checked={this.state.public === "public"}
-                        onChange={evt => this._inputChangeHandler("public", evt.target.value)}
+                        type="text"
+                        value={this.state.location}
+                        placeholder="location"
+                        onChange={evt => this._inputChangeHandler("location", evt.target.value)}
                     />
-                    Public
-                </label>
-                <br />
-                <label>
-                    <input
-                        type="radio"
-                        value="private"
-                        checked={this.state.public === "private"}
-                        onChange={evt => this._inputChangeHandler("public", evt.target.value)}
-                    />
-                    Private
-                </label>
-                <br />
-                <br />
-                <button onClick={this._submitData}>SUBMIT</button>
+                    <h3>Public or Private?</h3>
+                    <label>
+                        <input
+                            type="radio"
+                            value="public"
+                            checked={this.state.public === "public"}
+                            onChange={evt => this._inputChangeHandler("public", evt.target.value)}
+                        />
+                        Public
+                    </label>
+                    <br />
+                    <label>
+                        <input
+                            type="radio"
+                            value="private"
+                            checked={this.state.public === "private"}
+                            onChange={evt => this._inputChangeHandler("public", evt.target.value)}
+                        />
+                        Private
+                    </label>
+                    <br />
+                    <br />
+                    <button type="submit">SUBMIT</button>
+                </form>
             </div>
         );
     }
@@ -102,8 +96,12 @@ class NewWalk extends Component {
         });
     }
 
-    _submitData() {
-        api.post("/api/walk/new", {
+    _submitData(e) {
+        e.preventDefault();
+
+        // const data= {...this.state, startDate: this.state.startDate} // Handle Date / Time
+
+        api.post(`/api/walk/new/${this.props.match.params.id}`, {
             title: this.state.title,
             startDate: this.state.startDate,
             time: this.state.time,
@@ -113,6 +111,7 @@ class NewWalk extends Component {
         })
             .then(result => {
                 console.log(result);
+                this.props.history.push(`/walk/all`);
             })
             .catch(err => {
                 console.log(err.description);

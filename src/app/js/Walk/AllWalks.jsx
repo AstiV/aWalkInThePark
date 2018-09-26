@@ -28,7 +28,7 @@ class AllWalks extends Component {
         let walks;
         if (this.state.list) {
             walks = this.state.list.map((w, i) => {
-                console.log("List", this.state.list);
+                // console.log("List", this.state.list);
                 return (
                     <div className="container" key={i}>
                         <h2>{w.title}</h2>

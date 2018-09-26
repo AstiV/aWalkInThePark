@@ -87,7 +87,9 @@ class SingleWalk extends Component {
                     <p>Time: {this.state.walkData.time}</p>
                     <p>Location: {this.state.walkData.location}</p>
                     <p>Creator: {this.state.user.email}</p>
-                    {/* <p>Participants: {this.state.walkData.participants}</p> */}
+                    <div className="cardprofilepicture">
+                        <img src={this.state.user.profilePicture} alt="" />
+                    </div>
                     <p>Dogs</p>
                     <div>{dogs}</div>
                     <p>Participants</p>
