@@ -112,7 +112,7 @@
     margin: 0 0.5rem 0.5rem 0;
 }
 
-// Filter-Form
+// FILTER FORM
 
 .form-wrapper {
     background-color: $color3;
@@ -178,7 +178,7 @@
     padding: 0 3rem 1rem 3rem;
 }
 
-// Single Walk
+// SINGLE WALK
 
 .walk-major-wrapper {
     display: flex;
@@ -237,7 +237,7 @@
     align-items: center;
 }
 
-// Not found
+// NOT FOUND
 
 .not-found-wrapper {
     display: flex;
@@ -248,19 +248,11 @@
     height: auto;
 }
 
-// New Walk
-
-// .form-wrapper {
-//     background-color: $color3;
-//     border-radius: 5px;
-//     box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
-//     padding: 2rem;
-//     width: 100%;
-// }
+// NEW WALK
 
 .form-container {
     width: 100%;
-    display: flex;  
+    display: flex;
     justify-content: center;
 }
 
@@ -270,4 +262,38 @@
 
 .private-wrapper {
     display: flex;
+}
+
+// SINGLE DOG PROFILE
+
+.profile-wrapper {
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.human-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-wrapper {
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

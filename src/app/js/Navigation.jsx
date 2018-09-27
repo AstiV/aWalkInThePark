@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// import Logo from "../assets/noun_Dog_1609873_cropped.png";
+
 const Navigation = props => {
     return (
         <div className="navigation">
