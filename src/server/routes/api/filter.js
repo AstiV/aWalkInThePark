@@ -76,19 +76,22 @@ router.post("/results", checkLoggedIn, (req, res, next) => {
 
     console.log("CONDITIONS: ", filterConditions);
 
-    Dog.find({ $or: filterConditions }).then(filteredDogs => {
-        //TODO handle character and restrictions stricter $and ??? min max?
+    Dog.find({ $and: [{ $or: filterConditions }, { user: { $ne: req.user._id } }] }).then(
+        filteredDogs => {
+            //TODO handle character and restrictions stricter $and ??? min max?
 
-        if (filteredDogs.length > 0) {
-            res.send({ filteredDogs });
-        } else {
-            res.send("filter/index", {
-                message: "There are no dogs that fit your search query. Please adjust it and try again."
-            });
+            if (filteredDogs.length > 0) {
+                res.send({ filteredDogs });
+            } else {
+                res.send("filter/index", {
+                    message:
+                        "There are no dogs that fit your search query. Please adjust it and try again."
+                });
+            }
+
+            console.log("DOGS ", filteredDogs);
         }
-
-        console.log("DOGS ", filteredDogs);
-    });
+    );
 });
 
 module.exports = router;

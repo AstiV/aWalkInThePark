@@ -9,12 +9,12 @@ const List = ({ dogs }) => {
                 // return <li key={i}>{dog.name}</li>;
                 console.log("DOG: ", dog);
                 return (
-                    <div className="container" key={i}>
+                    <div className="list-card" key={i}>
                         <h2>{dog.name}</h2>
                         <p>Breed: {dog.breed}</p>
                         <p>Age: {dog.age}</p>
                         <p>Id: {dog._id}</p>
-                        <Link className="link-button" to={`/dog/profile/${dogs._id}`}>
+                        <Link className="link-button" to={`/dog/profile/${dog._id}`}>
                             Show Profile
                         </Link>
                     </div>

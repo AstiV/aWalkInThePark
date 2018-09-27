@@ -41,29 +41,30 @@ class Filter extends Component {
         return (
             <div className="container">
                 <div className="form-wrapper">
-                    <h1>Look for a fitting Companion</h1>
-                    <div className="filter-text zip">
-                        <input
-                            type="text"
-                            value={this.state.zip}
-                            placeholder="Zip Code..."
-                            onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
-                        />
-                    </div>
+                    <h2>Look for a fitting Companion</h2>
                     <input
+                        className="input"
+                        type="text"
+                        value={this.state.zip}
+                        placeholder="Zip Code..."
+                        onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
+                    />
+                    <input
+                        className="input"
                         type="number"
                         value={this.state.age}
                         placeholder="Age..."
                         onChange={evt => this._inputChangeHandler("age", evt.target.value)}
                     />
                     <input
+                        className="input"
                         type="text"
                         value={this.state.breed}
                         placeholder="Breed..."
                         onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
                     />
+
                     <br />
-                    <h3>Gender</h3>
                     <label>
                         <input
                             type="radio"
@@ -83,7 +84,9 @@ class Filter extends Component {
                         />
                         Female
                     </label>
+
                     <br />
+
                     <h3>Your Dog's Character</h3>
                     <label htmlFor="">
                         Scaredy-Cat
@@ -102,6 +105,7 @@ class Filter extends Component {
                         />
                         Daredevil
                     </label>
+
                     <br />
                     <label htmlFor="">
                         Energy Saver
@@ -176,8 +180,9 @@ class Filter extends Component {
                         Snuggly
                     </label>
                     <br />
+
                     <label htmlFor="">
-                        Rather no Physical Contact
+                        No Physical Contact
                         <input
                             type="range"
                             defaultValue={this.state.character.fightGamer}
@@ -191,7 +196,7 @@ class Filter extends Component {
                             max="5"
                             step="1"
                         />
-                        Fighting Games Player
+                        Fighting Games
                     </label>
                     <br />
                     <h3>Weight</h3>
@@ -224,7 +229,9 @@ class Filter extends Component {
                         />
                         more than 30kg
                     </label>
+
                     <br />
+
                     <h3>Any Restrictions?</h3>
                     <label htmlFor="">
                         <input
@@ -270,11 +277,16 @@ class Filter extends Component {
                         />
                         Cars
                     </label>
+
                     <br />
                     <br />
-                    <button onClick={this._submitData}>SUBMIT</button>
+                    <button className="button" onClick={this._submitData}>
+                        SUBMIT
+                    </button>
                 </div>
-                <List dogs={this.state.results} />
+                <div className="list-wrapper">
+                    <List dogs={this.state.results} />
+                </div>
             </div>
         );
     }
