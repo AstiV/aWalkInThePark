@@ -34,7 +34,7 @@ class WalkList extends Component {
                         <p>Date: {moment(w.startDate).format("DD.MM.YYYY")}</p>
                         <p>Time: {moment(w.startDate).format("HH:mm")}</p>
                         <p>Location: {w.location}</p>
-                        <Link className="link-button" to={`/walk/${this.state.list[i]._id}`}>
+                        <Link className="link-button button" to={`/walk/${this.state.list[i]._id}`}>
                             Show Walk
                         </Link>
                     </div>
@@ -45,7 +45,7 @@ class WalkList extends Component {
             walks = <img src="https://loading.io/spinners/spin/lg.ajax-spinner-gif.gif" />;
         }
         // TODO render view if user has no walks, yet
-        return <div>{walks}</div>;
+        return walks;
     }
 }
 

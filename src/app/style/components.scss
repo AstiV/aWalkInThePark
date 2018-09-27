@@ -21,6 +21,10 @@
     }
 }
 
+.link-button {
+    text-decoration: none;
+}
+
 .input {
     border-radius: 3px;
     border: 1px solid $grey;
@@ -78,10 +82,6 @@
     padding: 0;
 }
 
-.link-button {
-    text-decoration: none;
-}
-
 // HOME SCREEN
 
 .greeting-wrapper {
@@ -101,16 +101,18 @@
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: row;
-    // flex-flow: row wrap;
-    // align-content: flex-start;
-    // justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .list-card {
-    width: 20rem;
+    width: 19rem;
     border: 1px solid $text-color;
     border-radius: 3px;
     padding: 2rem;
-    margin-bottom: 1rem;
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+.form-wrapper {
+    background-color: $color2;
 }
