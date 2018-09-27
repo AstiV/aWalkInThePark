@@ -106,9 +106,9 @@
 
 .list-card {
     width: 19rem;
-    border: 1px solid $text-color;
     border-radius: 3px;
-    padding: 2rem;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
     margin: 0 0.5rem 0.5rem 0;
 }
 
@@ -116,7 +116,8 @@
 
 .form-wrapper {
     background-color: $color3;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
     padding: 2rem;
     width: 100%;
 }
@@ -130,4 +131,11 @@
 .first-row-wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+.dog-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
 }

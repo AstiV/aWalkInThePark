@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const List = ({ dogs }) => {
     console.log("DOGS PROPS: ", dogs);
     return (
-        <ul>
+        <ul className="dog-list">
             {dogs.map((dog, i) => {
                 // return <li key={i}>{dog.name}</li>;
                 console.log("DOG: ", dog);

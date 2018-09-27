@@ -304,7 +304,7 @@ class Filter extends Component {
                         SUBMIT
                     </button>
                 </div>
-                <div className="list-wrapper">
+                <div>
                     <List dogs={this.state.results} />
                 </div>
             </div>
