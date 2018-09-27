@@ -65,15 +65,10 @@ class SingleDogProfile extends Component {
                     <div className="profilepicture">
                         <img src={this.state.dogData.dogPicture} alt="" />
                     </div>
-
                     <h1>{this.state.dogData.name}</h1>
-                    <h3>My Human</h3>
-                    <div className="cardprofilepicture">
-                        <img src={this.state.user.profilePicture} alt="" />
-                    </div>
-                    {this.state.user.email}
                 </div>
                 <div className="info-wrapper">
+                    <h3>General Info</h3>
                     <p>Age: {this.state.dogData.age}</p>
                     <p>Breed: {this.state.dogData.breed}</p>
                     <p>Gender: {this.state.dogData.gender}</p>
@@ -94,6 +89,11 @@ class SingleDogProfile extends Component {
                 {this.state.publicTransport && <p>Public Transport {this.state.publicTransport}</p>}
                 {this.state.car && <p>Car {this.state.car}</p>}
 
+                <h3>My Human</h3>
+                <div className="cardprofilepicture">
+                    <img src={this.state.user.profilePicture} alt="" />
+                </div>
+                {this.state.user.email}
                 <br />
                 <br />
                 <Link className="link-button button" to={{ pathname: `/walk/new/${this.state.id}` }}>
