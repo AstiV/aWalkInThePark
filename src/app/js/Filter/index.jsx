@@ -42,19 +42,20 @@ class Filter extends Component {
             <div className="container">
                 <div className="form-wrapper">
                     <h1>Look for a fitting Companion</h1>
-                    <input
-                        type="text"
-                        value={this.state.zip}
-                        placeholder="Zip Code..."
-                        onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
-                    />
+                    <div className="filter-text zip">
+                        <input
+                            type="text"
+                            value={this.state.zip}
+                            placeholder="Zip Code..."
+                            onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
+                        />
+                    </div>
                     <input
                         type="number"
                         value={this.state.age}
                         placeholder="Age..."
                         onChange={evt => this._inputChangeHandler("age", evt.target.value)}
                     />
-                    <br />
                     <input
                         type="text"
                         value={this.state.breed}
