@@ -61,15 +61,18 @@ class SingleDogProfile extends Component {
     render() {
         return (
             <div className="container">
-                <div className="profilepicture">
-                    <img src={this.state.dogData.dogPicture} alt="" />
+                <div className="main-wrapper">
+                    <div className="profilepicture">
+                        <img src={this.state.dogData.dogPicture} alt="" />
+                    </div>
+
+                    <h1>{this.state.dogData.name}</h1>
+                    <h3>My Human</h3>
+                    <div className="cardprofilepicture">
+                        <img src={this.state.user.profilePicture} alt="" />
+                    </div>
+                    {this.state.user.email}
                 </div>
-                <br />
-                <br />
-                <Link className="link-button button" to={{ pathname: `/walk/new/${this.state.id}` }}>
-                    Schedule a Walk
-                </Link>
-                <h1>{this.state.dogData.name}</h1>
                 <div className="info-wrapper">
                     <p>Age: {this.state.dogData.age}</p>
                     <p>Breed: {this.state.dogData.breed}</p>
@@ -91,8 +94,11 @@ class SingleDogProfile extends Component {
                 {this.state.publicTransport && <p>Public Transport {this.state.publicTransport}</p>}
                 {this.state.car && <p>Car {this.state.car}</p>}
 
-                <h3>My Human</h3>
-                {this.state.user}
+                <br />
+                <br />
+                <Link className="link-button button" to={{ pathname: `/walk/new/${this.state.id}` }}>
+                    Schedule a Walk
+                </Link>
             </div>
         );
     }

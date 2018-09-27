@@ -12,8 +12,8 @@ const walks = [
         time: "14:00",
         location: "Hasenheide",
         user: "5baa840bee032556c625aaf6",
-        participants: ["5baa840bee032556c625aaf9"],
-        dogs: ["5baa840bee032556c625aaf3"],
+        participants: ["5baa840bee032556c625aaf9", "5baa840bee032556c625aaf6"],
+        dogs: ["5baa840bee032556c625aaf3", "5baa840bee032556c625aaf2"],
         public: "private"
     },
 

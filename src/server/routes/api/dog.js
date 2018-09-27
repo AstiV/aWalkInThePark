@@ -75,6 +75,7 @@ router.get("/profile/:id", checkLoggedIn, (req, res, next) => {
     const dogId = req.params.id;
 
     Dog.findById(dogId)
+        .populate("user")
         .then(dog => {
             res.send(dog);
         })
