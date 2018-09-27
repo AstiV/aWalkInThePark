@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
+import moment from "moment";
 
 import api from "../utils/api";
 
@@ -83,8 +84,8 @@ class SingleWalk extends Component {
             <div className="container">
                 <h1>{this.state.walkData.title}</h1>
                 <div className="info-wrapper">
-                    <p>Date: {this.state.walkData.startDate}</p>
-                    <p>Time: {this.state.walkData.time}</p>
+                    <p>Date: {moment(this.state.walkData.startDate).format("DD.MM.YYYY")}</p>
+                    <p>Time: {moment(this.state.walkData.startDate).format("HH:mm")}</p>
                     <p>Location: {this.state.walkData.location}</p>
                     <p>Creator: {this.state.user.email}</p>
                     <div className="cardprofilepicture">
