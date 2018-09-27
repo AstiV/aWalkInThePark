@@ -120,3 +120,14 @@
     padding: 2rem;
     width: 100%;
 }
+
+.text-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-row-wrapper {
+    display: flex;
+    justify-content: space-between;
+}

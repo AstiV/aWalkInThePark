@@ -42,50 +42,148 @@ class Filter extends Component {
             <div className="container">
                 <div className="form-wrapper">
                     <h2>Look for a fitting Companion</h2>
-                    <input
-                        className="input"
-                        type="text"
-                        value={this.state.zip}
-                        placeholder="Zip Code..."
-                        onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
-                    />
-                    <input
-                        className="input"
-                        type="number"
-                        value={this.state.age}
-                        placeholder="Age..."
-                        onChange={evt => this._inputChangeHandler("age", evt.target.value)}
-                    />
-                    <input
-                        className="input"
-                        type="text"
-                        value={this.state.breed}
-                        placeholder="Breed..."
-                        onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
-                    />
+                    <div className="first-row-wrapper">
+                        <div className="text-input-wrapper">
+                            <input
+                                className="input"
+                                type="text"
+                                value={this.state.zip}
+                                placeholder="Zip Code..."
+                                onChange={evt => this._inputChangeHandler("zip", evt.target.value)}
+                            />
+                            <input
+                                className="input"
+                                type="number"
+                                value={this.state.age}
+                                placeholder="Age..."
+                                onChange={evt => this._inputChangeHandler("age", evt.target.value)}
+                            />
+                            <input
+                                className="input"
+                                type="text"
+                                value={this.state.breed}
+                                placeholder="Breed..."
+                                onChange={evt => this._inputChangeHandler("breed", evt.target.value)}
+                            />
+                            <br />
+                        </div>
+                        <div className="gender-wrapper">
+                            <h3>Gender</h3>
+                            <label>
+                                <input
+                                    type="radio"
+                                    value="male"
+                                    checked={this.state.gender === "male"}
+                                    onChange={evt =>
+                                        this._inputChangeHandler("gender", evt.target.value)
+                                    }
+                                />
+                                Male
+                            </label>
 
-                    <br />
-                    <label>
-                        <input
-                            type="radio"
-                            value="male"
-                            checked={this.state.gender === "male"}
-                            onChange={evt => this._inputChangeHandler("gender", evt.target.value)}
-                        />
-                        Male
-                    </label>
-                    <br />
-                    <label>
-                        <input
-                            type="radio"
-                            value="female"
-                            checked={this.state.gender === "female"}
-                            onChange={evt => this._inputChangeHandler("gender", evt.target.value)}
-                        />
-                        Female
-                    </label>
+                            <br />
+                            <label>
+                                <input
+                                    type="radio"
+                                    value="female"
+                                    checked={this.state.gender === "female"}
+                                    onChange={evt =>
+                                        this._inputChangeHandler("gender", evt.target.value)
+                                    }
+                                />
+                                Female
+                            </label>
+                        </div>
 
-                    <br />
+                        <br />
+                        <div className="weight-wrapper">
+                            <h3>Weight</h3>
+                            <label>
+                                <input
+                                    type="radio"
+                                    value="light"
+                                    checked={this.state.weight === "light"}
+                                    onChange={evt =>
+                                        this._inputChangeHandler("weight", evt.target.value)
+                                    }
+                                />
+                                Less than 15kg
+                            </label>
+                            <br />
+                            <label>
+                                <input
+                                    type="radio"
+                                    value="middle"
+                                    checked={this.state.weight === "middle"}
+                                    onChange={evt =>
+                                        this._inputChangeHandler("weight", evt.target.value)
+                                    }
+                                />
+                                15-30kg
+                            </label>
+                            <br />
+                            <label>
+                                <input
+                                    type="radio"
+                                    value="heavy"
+                                    checked={this.state.weight === "heavy"}
+                                    onChange={evt =>
+                                        this._inputChangeHandler("weight", evt.target.value)
+                                    }
+                                />
+                                more than 30kg
+                            </label>
+                        </div>
+
+                        <br />
+                        <div className="restrictions-wrapper">
+                            <h3>Any Restrictions?</h3>
+                            <label htmlFor="">
+                                <input
+                                    type="checkbox"
+                                    value={this.state.restrictions.maleDogs}
+                                    onChange={evt => this._restrictionsChangeHandler(`maleDogs`)}
+                                />
+                                Male Dogs
+                            </label>
+                            <br />
+                            <label htmlFor="">
+                                <input
+                                    type="checkbox"
+                                    value={this.state.restrictions.femaleDogs}
+                                    onChange={evt => this._restrictionsChangeHandler(`femaleDogs`)}
+                                />
+                                Female Dogs
+                            </label>
+                            <br />
+                            <label htmlFor="">
+                                <input
+                                    type="checkbox"
+                                    value={this.state.restrictions.traffic}
+                                    onChange={evt => this._restrictionsChangeHandler(`traffic`)}
+                                />
+                                Traffic
+                            </label>
+                            <br />
+                            <label htmlFor="">
+                                <input
+                                    type="checkbox"
+                                    value={this.state.restrictions.publicTransport}
+                                    onChange={evt => this._restrictionsChangeHandler(`publicTransport`)}
+                                />
+                                Public Transport
+                            </label>
+                            <br />
+                            <label htmlFor="">
+                                <input
+                                    type="checkbox"
+                                    value={this.state.restrictions.car}
+                                    onChange={evt => this._restrictionsChangeHandler(`car`)}
+                                />
+                                Cars
+                            </label>
+                        </div>
+                    </div>
 
                     <h3>Your Dog's Character</h3>
                     <label htmlFor="">
@@ -199,84 +297,6 @@ class Filter extends Component {
                         Fighting Games
                     </label>
                     <br />
-                    <h3>Weight</h3>
-                    <label>
-                        <input
-                            type="radio"
-                            value="light"
-                            checked={this.state.weight === "light"}
-                            onChange={evt => this._inputChangeHandler("weight", evt.target.value)}
-                        />
-                        Less than 15kg
-                    </label>
-                    <br />
-                    <label>
-                        <input
-                            type="radio"
-                            value="middle"
-                            checked={this.state.weight === "middle"}
-                            onChange={evt => this._inputChangeHandler("weight", evt.target.value)}
-                        />
-                        15-30kg
-                    </label>
-                    <br />
-                    <label>
-                        <input
-                            type="radio"
-                            value="heavy"
-                            checked={this.state.weight === "heavy"}
-                            onChange={evt => this._inputChangeHandler("weight", evt.target.value)}
-                        />
-                        more than 30kg
-                    </label>
-
-                    <br />
-
-                    <h3>Any Restrictions?</h3>
-                    <label htmlFor="">
-                        <input
-                            type="checkbox"
-                            value={this.state.restrictions.maleDogs}
-                            onChange={evt => this._restrictionsChangeHandler(`maleDogs`)}
-                        />
-                        Male Dogs
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        <input
-                            type="checkbox"
-                            value={this.state.restrictions.femaleDogs}
-                            onChange={evt => this._restrictionsChangeHandler(`femaleDogs`)}
-                        />
-                        Female Dogs
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        <input
-                            type="checkbox"
-                            value={this.state.restrictions.traffic}
-                            onChange={evt => this._restrictionsChangeHandler(`traffic`)}
-                        />
-                        Traffic
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        <input
-                            type="checkbox"
-                            value={this.state.restrictions.publicTransport}
-                            onChange={evt => this._restrictionsChangeHandler(`publicTransport`)}
-                        />
-                        Public Transport
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        <input
-                            type="checkbox"
-                            value={this.state.restrictions.car}
-                            onChange={evt => this._restrictionsChangeHandler(`car`)}
-                        />
-                        Cars
-                    </label>
 
                     <br />
                     <br />
