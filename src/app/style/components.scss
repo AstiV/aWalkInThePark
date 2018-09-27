@@ -1,6 +1,6 @@
 .button {
     padding: 10px 15px;
-    background-color: $primary-color;
+    background-color: $secondary-color;
     color: #fff;
     transition: 250ms all ease-in-out;
     border: none;
@@ -9,7 +9,7 @@
 
     &:hover {
         cursor: pointer;
-        background-color: lighten($primary-color, 8%);
+        background-color: lighten($secondary-color, 8%);
     }
 
     &-secondary {
@@ -19,6 +19,10 @@
             background-color: lighten($secondary-color, 8%);
         }
     }
+}
+
+.link-button {
+    text-decoration: none;
 }
 
 .input {
@@ -66,4 +70,72 @@
 .profilepicture img {
     width: 10rem;
     border-radius: 50%;
+}
+
+.cardprofilepicture img {
+    width: 5rem;
+    border-radius: 50%;
+}
+
+// Date-picker time
+.react-datepicker__time-list {
+    padding: 0;
+}
+
+// HOME SCREEN
+
+.greeting-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.button-wrapper {
+    height: 2.5rem;
+    display: flex;
+}
+
+.list-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.list-card {
+    width: 19rem;
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+// Filter-Form
+
+.form-wrapper {
+    background-color: $color3;
+    border-radius: 5px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    width: 100%;
+}
+
+.text-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-row-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dog-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
 }

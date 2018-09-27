@@ -7,52 +7,57 @@ const upload = require("../../utils/upload");
 const { checkLoggedIn } = require("../../utils/middleware");
 
 // Create walk event
-router.post("/new", checkLoggedIn, (req, res, next) => {
+router.post("/new/:id", checkLoggedIn, (req, res, next) => {
     const walk = req.body;
-    console.log("REQ USER: ", req.user);
+    const dogId = req.params.id; // other dog, clicked-on
+    let userDog; // dog of logged-in user
+    let otherDogOwner; // owner of the other dog, clicked-on
 
-    let newWalk = new Walk({
-        title: walk.title,
-        startDate: walk.startDate,
-        time: walk.time,
-        location: walk.location,
+    Dog.findOne({ user: req.user._id })
+        .then(dog => {
+            userDog = dog;
 
-        // This User is creator of walk
-        user: req.user._id
-
-        // // These users are only participating
-        // // Get Id of user from dog profile, that is clicked on
-        // participants: [req.user._id], //?
-
-        // // Get Ids of dogs of both owners
-        // dogs: [req.dog._id]
-    });
-    console.log("After CREATION: ", newWalk);
-    console.log("REQ.USER: ", req.user);
-
-    // Save new instance of Walk to Database
-    newWalk
-        .save()
-        .then(walk => {
-            console.log("walk in Promise: ", walk);
-            User.findByIdAndUpdate(
-                { _id: walk.user },
-                { $push: { walks: walk._id } },
-                { new: true },
-                console.log("WALK.USER: ", walk.user)
-            ).then(updatedUser => {
-                console.log("success", updatedUser);
-            });
-            res.send(walk);
+            return Dog.findById(dogId);
         })
-        .catch(error => {
-            next(error);
+        .then(otherDog => {
+            otherDogOwner = otherDog.user;
+
+            return new Walk({
+                title: walk.title,
+                startDate: walk.startDate,
+                time: walk.time,
+                location: walk.location,
+
+                // This User is creator of walk
+                user: req.user._id,
+
+                // These users are only participating
+                // Get Id of user from dog profile, that is clicked on
+                participants: [req.user._id, otherDogOwner],
+
+                // // Get Ids of dogs of both owners
+                dogs: [dogId, userDog._id]
+            }).save();
+        })
+        .then(walk => {
+            User.findByIdAndUpdate({ _id: walk.user }, { $push: { walks: walk._id } }, { new: true })
+                .then(updatedUser => {
+                    console.log("success", updatedUser);
+                })
+                .then(participant => {
+                    User.findOne({ dogs: dogId });
+                    console.log("PARTICIPANTS: ", participant);
+                });
+            res.send(walk);
         });
 });
 
 // Read all walks of loggedin User
 router.get("/all", checkLoggedIn, (req, res, next) => {
     Walk.find({ user: req.user._id })
+        // .populate("participants", "email")
+        // .populate("user")
+        // .populate("dogs")
         .then(walk => {
             res.send(walk);
         })
@@ -74,13 +79,14 @@ router.get("/list", checkLoggedIn, (req, res, next) => {
 });
 
 // Read a single walk
-router.get("/walk/:id", checkLoggedIn, (req, res, next) => {
+router.get("/:id", checkLoggedIn, (req, res, next) => {
     const walkId = req.params.id;
-    console.log("Walk Id: ", walkId);
 
     Walk.findById(walkId)
+        .populate("user")
+        .populate("dogs")
+        .populate("participants")
         .then(walk => {
-            console.log("Found a Walk!", walk);
             res.send(walk);
         })
         .catch(error => {

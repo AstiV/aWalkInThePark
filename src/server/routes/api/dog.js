@@ -26,8 +26,8 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
         character: dog.character,
         weight: dog.weight,
         restrictions: dog.restrictions,
-        aboutMe: dog.aboutMe
-        // dogPictures: dog.dogPictures
+        aboutMe: dog.aboutMe,
+        dogPicture: dog.dogPicture
     });
     console.log("Hello from the newDog: ", newDog);
 

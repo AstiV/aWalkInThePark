@@ -35,7 +35,10 @@ class AllDogs extends Component {
                         <p>Breed: {d.breed}</p>
                         <p>Age: {d.age}</p>
                         <p>Id: {this.state.list[i]._id}</p>
-                        <Link className="link-button" to={`/dog/profile/${this.state.list[i]._id}`}>
+                        <Link
+                            className="link-button button"
+                            to={`/dog/profile/${this.state.list[i]._id}`}
+                        >
                             Show Profile
                         </Link>
                     </div>

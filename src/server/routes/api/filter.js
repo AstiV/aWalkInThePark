@@ -5,26 +5,6 @@ const User = require("../../models/User");
 const upload = require("../../utils/upload");
 const { checkLoggedIn } = require("../../utils/middleware");
 
-// router.get("/index", checkLoggedIn (req, res, next) => {
-//     Dog.find({}).then(dogs => {
-//         console.log(dogs);
-
-//         const genders = Array.from(dogs).map(dog => {
-//             // console.log(dog.gender);
-//             // console.log(typeof JSON.stringify(dog.gender));
-//             if (typeof JSON.stringify(dog.gender) !== "undefined") {
-//                 console.log(dog.gender);
-
-//                 return dog.gender;
-//             }
-//         });
-
-//         console.log(genders);
-
-//         res.send({ dogs, genders });
-//     });
-//// });
-
 router.post("/results", checkLoggedIn, (req, res, next) => {
     console.log("I AM THE BODY: ", req.body);
     const data = req.body;
@@ -96,20 +76,22 @@ router.post("/results", checkLoggedIn, (req, res, next) => {
 
     console.log("CONDITIONS: ", filterConditions);
 
-    Dog.find({ $or: filterConditions }).then(dogs => {
-        //TODO handle character and restrictions stricter $and ??? min max?
+    Dog.find({ $and: [{ $or: filterConditions }, { user: { $ne: req.user._id } }] }).then(
+        filteredDogs => {
+            //TODO handle character and restrictions stricter $and ??? min max?
 
-        if (dogs.length > 0) {
-            res.send({ dogs });
-        } else {
-            res.send("filter/index", {
-                message:
-                    "There are no translators that fit your search query. Please adjust it and try again."
-            });
+            if (filteredDogs.length > 0) {
+                res.send({ filteredDogs });
+            } else {
+                res.send("filter/index", {
+                    message:
+                        "There are no dogs that fit your search query. Please adjust it and try again."
+                });
+            }
+
+            console.log("DOGS ", filteredDogs);
         }
-
-        console.log("DOGS ", dogs);
-    });
+    );
 });
 
 module.exports = router;

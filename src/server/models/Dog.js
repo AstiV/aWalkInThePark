@@ -95,12 +95,10 @@ const dogSchema = new Schema({
         type: String
     },
 
-    dogPictures: [
-        {
-            type: String,
-            default: "https://upload.wikimedia.org/wikipedia/commons/2/26/Space_dog_illustration.png"
-        }
-    ]
+    dogPicture: {
+        type: String,
+        default: "https://upload.wikimedia.org/wikipedia/commons/2/26/Space_dog_illustration.png"
+    }
 });
 
 module.exports = mongoose.model("Dog", dogSchema);
