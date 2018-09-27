@@ -238,13 +238,13 @@
 }
 
 // Not found
-// .not-found {
-//     max-width: 100%;
-//     height: auto;
-// }
-// .not-found img {
-//     width: 50rem;
-//     height: auto;
-// }
 
+.not-found-wrapper {
+    display: flex;
+    
+}
 
+.not-found img {
+    width: 10rem;
+    height: auto;
+}
