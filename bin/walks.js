@@ -24,8 +24,12 @@ const walks = [
         time: "15:30",
         location: "Grunewald",
         user: "5baa840bee032556c625aaf7",
-        participants: ["5baa840bee032556c625aaf9", "5baa840bee032556c625aaf8"],
-        dogs: ["5baa840bee032556c625aaf3", "5baa840bee032556c625aaf5"],
+        participants: [
+            "5baa840bee032556c625aaf9",
+            "5baa840bee032556c625aaf8",
+            "5baa840bee032556c625aaf7"
+        ],
+        dogs: ["5baa840bee032556c625aaf3", "5baa840bee032556c625aaf5", "5baa840bee032556c625aaf4"],
         public: "public"
     },
 

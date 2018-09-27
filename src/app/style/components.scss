@@ -178,4 +178,61 @@
     padding: 0 3rem 1rem 3rem;
 }
 
+// Single Walk
 
+.walk-major-wrapper {
+    display: flex;
+}
+
+.walk-info-wrapper {
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+}
+
+.creator-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 4rem;
+    padding-left: 4rem;
+}
+
+.creator-picture {
+    width: 10rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+.general-info {
+    margin-left: 1.5rem;
+}
+
+.participants-info-wrapper {
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+.dog-wrapper {
+    display: flex;
+}
+
+.participants-wrapper {
+    display: flex;
+}
+
+.picture-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -54,12 +54,14 @@ class SingleWalk extends Component {
                 return (
                     <div key={i}>
                         <ul>
-                            <li>{dog.name}</li>
-                            <li>
-                                <div className="cardprofilepicture">
-                                    <img src={dog.dogPicture} alt="" />
-                                </div>
-                            </li>
+                            <div className="picture-name-wrapper">
+                                <li>
+                                    <div className="cardprofilepicture">
+                                        <img src={dog.dogPicture} alt="" />
+                                    </div>
+                                </li>
+                                <li>{dog.name}</li>
+                            </div>
                         </ul>
                     </div>
                 );
@@ -69,12 +71,14 @@ class SingleWalk extends Component {
                 return (
                     <div key={i}>
                         <ul>
-                            <li>{participant.email}</li>
-                            <li>
-                                <div className="cardprofilepicture">
-                                    <img src={participant.profilePicture} alt="" />
-                                </div>
-                            </li>
+                            <div className="picture-name-wrapper">
+                                <li>
+                                    <div className="cardprofilepicture">
+                                        <img src={participant.profilePicture} alt="" />
+                                    </div>
+                                </li>
+                                <li>{participant.email}</li>
+                            </div>
                         </ul>
                     </div>
                 );
@@ -83,18 +87,33 @@ class SingleWalk extends Component {
         return (
             <div className="container">
                 <h1>{this.state.walkData.title}</h1>
-                <div className="info-wrapper">
-                    <p>Date: {moment(this.state.walkData.startDate).format("DD.MM.YYYY")}</p>
-                    <p>Time: {moment(this.state.walkData.startDate).format("HH:mm")}</p>
-                    <p>Location: {this.state.walkData.location}</p>
-                    <p>Creator: {this.state.user.email}</p>
-                    <div className="cardprofilepicture">
-                        <img src={this.state.user.profilePicture} alt="" />
+                <div className="walk-major-wrapper">
+                    <div className="walk-info-wrapper">
+                        <div className="creator-info">
+                            <h3>Creator</h3>
+
+                            <img
+                                className="creator-picture"
+                                src={this.state.user.profilePicture}
+                                alt=""
+                            />
+
+                            <p>{this.state.user.email}</p>
+                        </div>
+                        <div className="general-info">
+                            <h3>General Info</h3>
+                            <p>Date: {moment(this.state.walkData.startDate).format("DD.MM.YYYY")}</p>
+                            <p>Time: {moment(this.state.walkData.startDate).format("HH:mm")}</p>
+                            <p>Location: {this.state.walkData.location}</p>
+                        </div>
                     </div>
-                    <p>Dogs</p>
-                    <div>{dogs}</div>
-                    <p>Participants</p>
-                    <div>{participants}</div>
+                    <div className="participants-info-wrapper">
+                        <div className="header-wrapper">
+                            <h3>Participants</h3>
+                        </div>
+                        <div className="dog-wrapper">{dogs}</div>
+                        <div className="participants-wrapper">{participants}</div>
+                    </div>
                 </div>
             </div>
         );

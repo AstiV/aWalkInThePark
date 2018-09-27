@@ -11,6 +11,10 @@ body {
     color: $text-color;
 }
 
+ul {
+    list-style: none;
+}
+
 .container {
     padding: 25px calc((100vw - 960px) / 2);
 

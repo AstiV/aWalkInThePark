@@ -21,7 +21,7 @@ const users = [
         password: bcrypt.hashSync("test", bcrypt.genSaltSync(8), null),
         profilePicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537798476/Bine.jpg",
         dogs: ["5baa840bee032556c625aaf4"],
-        walks: []
+        walks: ["5ccc840bee032556c625aaf9"]
     },
     {
         _id: "5baa840bee032556c625aaf8",
