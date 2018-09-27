@@ -29,7 +29,7 @@ class WalkList extends Component {
             walks = this.state.list.map((w, i) => {
                 console.log("List", this.state.list);
                 return (
-                    <div key={i}>
+                    <div className="list-card" key={i}>
                         <h2>{w.title}</h2>
                         <p>Date: {moment(w.startDate).format("DD.MM.YYYY")}</p>
                         <p>Time: {moment(w.startDate).format("HH:mm")}</p>

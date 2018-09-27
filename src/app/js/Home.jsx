@@ -14,8 +14,9 @@ const Home = props => {
                     </Link>
                 </div>
             </div>
-
-            <Walklist />
+            <div className="list-wrapper">
+                <Walklist />
+            </div>
         </div>
     );
 };
