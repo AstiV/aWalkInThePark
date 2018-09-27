@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// import Logo from "../assets/noun_Dog_1609873_cropped.png";
+
 const Navigation = props => {
     return (
         <div className="navigation">
@@ -38,14 +40,6 @@ const Navigation = props => {
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/walk/all">
                                 All my Walks
-                            </Link>
-                        </span>
-                    )}
-                    {props.user && (
-                        <span>
-                            &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/walk/new">
-                                Create new Walk
                             </Link>
                         </span>
                     )}

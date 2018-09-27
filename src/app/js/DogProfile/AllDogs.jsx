@@ -30,17 +30,21 @@ class AllDogs extends Component {
             dogs = this.state.list.map((d, i) => {
                 console.log("List", this.state.list);
                 return (
-                    <div className="container" key={i}>
-                        <h2>{d.name}</h2>
-                        <p>Breed: {d.breed}</p>
-                        <p>Age: {d.age}</p>
-                        <p>Id: {this.state.list[i]._id}</p>
-                        <Link
-                            className="link-button button"
-                            to={`/dog/profile/${this.state.list[i]._id}`}
-                        >
-                            Show Profile
-                        </Link>
+                    <div className="dog-card" key={i}>
+                        <div className="dog-card-picture">
+                            <img src={d.dogPicture} alt="" />
+                            <Link
+                                className="link-button dog-button"
+                                to={`/dog/profile/${this.state.list[i]._id}`}
+                            >
+                                Show Profile
+                            </Link>
+                        </div>
+                        <div className="dog-card-info">
+                            <h2>{d.name}</h2>
+                            <p>Breed: {d.breed}</p>
+                            <p>Age: {d.age}</p>
+                        </div>
                     </div>
                 );
             });
@@ -49,7 +53,11 @@ class AllDogs extends Component {
             dogs = <img src="https://loading.io/spinners/spin/lg.ajax-spinner-gif.gif" />;
         }
         // TODO render view if user has no dogs, yet
-        return <div>{dogs}</div>;
+        return (
+            <div className="container">
+                <div className="list-wrapper">{dogs}</div>
+            </div>
+        );
     }
 }
 

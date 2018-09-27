@@ -112,7 +112,7 @@
     margin: 0 0.5rem 0.5rem 0;
 }
 
-// Filter-Form
+// FILTER FORM
 
 .form-wrapper {
     background-color: $color3;
@@ -133,9 +133,180 @@
     justify-content: space-between;
 }
 
+.form-character-wrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-character-wrapper label {
+    display: flex;
+    justify-content: space-between;
+}
+
+// FILTER RESULTS LIST
+
 .dog-list {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
+}
+
+.dog-card {
+    width: 19rem;
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+.dog-card-picture {
+    position: relative;
+}
+
+.dog-card-picture img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+.dog-button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 0.3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.dog-card-info {
+    padding: 0 3rem 1rem 3rem;
+}
+
+// SINGLE WALK
+
+.walk-major-wrapper {
+    display: flex;
+}
+
+.walk-info-wrapper {
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+}
+
+.creator-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 4rem;
+    padding-left: 4rem;
+}
+
+.creator-picture {
+    width: 10rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+.general-info {
+    margin-left: 1.5rem;
+}
+
+.participants-info-wrapper {
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+.dog-wrapper {
+    display: flex;
+}
+
+.participants-wrapper {
+    display: flex;
+}
+
+.picture-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// NOT FOUND
+
+.not-found-wrapper {
+    display: flex;
+}
+
+.not-found img {
+    width: 10rem;
+    height: auto;
+}
+
+// NEW WALK
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.walk {
+    width: 23rem;
+}
+
+.private-wrapper {
+    display: flex;
+}
+
+// SINGLE DOG PROFILE
+
+.profile-wrapper {
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.human-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-wrapper {
+    border-radius: 3px;
+    box-shadow: 0 5px 40px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0 0.5rem 0.5rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

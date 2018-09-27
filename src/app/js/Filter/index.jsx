@@ -186,119 +186,117 @@ class Filter extends Component {
                     </div>
 
                     <h3>Your Dog's Character</h3>
-                    <label htmlFor="">
-                        Scaredy-Cat
-                        <input
-                            type="range"
-                            value={this.state.character.courage}
-                            onChange={evt =>
-                                this._inputChangeHandler("character", {
-                                    ...this.state.character,
-                                    courage: evt.target.value
-                                })
-                            }
-                            min="1"
-                            max="5"
-                            step="1"
-                        />
-                        Daredevil
-                    </label>
+                    <div className="form-character-wrapper">
+                        <label htmlFor="">
+                            <span>Scaredy-Cat</span>
+                            <input
+                                type="range"
+                                value={this.state.character.courage}
+                                onChange={evt =>
+                                    this._inputChangeHandler("character", {
+                                        ...this.state.character,
+                                        courage: evt.target.value
+                                    })
+                                }
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+                            <span>Daredevil</span>
+                        </label>
+                        <br />
+                        <label htmlFor="">
+                            Energy Saver
+                            <input
+                                type="range"
+                                value={this.state.character.agility}
+                                onChange={evt =>
+                                    this._inputChangeHandler("character", {
+                                        ...this.state.character,
+                                        agility: evt.target.value
+                                    })
+                                }
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+                            Marathon Runner
+                        </label>
+                        <br />
+                        <label htmlFor="">
+                            Yes-Sayer
+                            <input
+                                type="range"
+                                value={this.state.character.stubborn}
+                                onChange={evt =>
+                                    this._inputChangeHandler("character", {
+                                        ...this.state.character,
+                                        stubborn: evt.target.value
+                                    })
+                                }
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+                            Stubborn
+                        </label>
+                        <br />
+                        <label htmlFor="">
+                            Non-Swimmer
+                            <input
+                                type="range"
+                                value={this.state.character.water}
+                                onChange={evt =>
+                                    this._inputChangeHandler("character", {
+                                        ...this.state.character,
+                                        water: evt.target.value
+                                    })
+                                }
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+                            Water Rat
+                        </label>
+                        <br />
+                        <label htmlFor="">
+                            Ice Block
+                            <input
+                                type="range"
+                                defaultValue={this.state.character.snuggly}
+                                // onChange={evt => this._inputChangeHandler("snuggly", evt.target.value)}
+                                onChange={evt =>
+                                    this._inputChangeHandler("character", {
+                                        ...this.state.character,
+                                        snuggly: evt.target.value
+                                    })
+                                }
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+                            Snuggly
+                        </label>
+                        <br />
 
-                    <br />
-                    <label htmlFor="">
-                        Energy Saver
-                        <input
-                            type="range"
-                            value={this.state.character.agility}
-                            onChange={evt =>
-                                this._inputChangeHandler("character", {
-                                    ...this.state.character,
-                                    agility: evt.target.value
-                                })
-                            }
-                            min="1"
-                            max="5"
-                            step="1"
-                        />
-                        Marathon Runner
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        Yes-Sayer
-                        <input
-                            type="range"
-                            value={this.state.character.stubborn}
-                            onChange={evt =>
-                                this._inputChangeHandler("character", {
-                                    ...this.state.character,
-                                    stubborn: evt.target.value
-                                })
-                            }
-                            min="1"
-                            max="5"
-                            step="1"
-                        />
-                        Stubborn
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        Non-Swimmer
-                        <input
-                            type="range"
-                            value={this.state.character.water}
-                            onChange={evt =>
-                                this._inputChangeHandler("character", {
-                                    ...this.state.character,
-                                    water: evt.target.value
-                                })
-                            }
-                            min="1"
-                            max="5"
-                            step="1"
-                        />
-                        Water Rat
-                    </label>
-                    <br />
-                    <label htmlFor="">
-                        Ice Block
-                        <input
-                            type="range"
-                            defaultValue={this.state.character.snuggly}
-                            // onChange={evt => this._inputChangeHandler("snuggly", evt.target.value)}
-                            onChange={evt =>
-                                this._inputChangeHandler("character", {
-                                    ...this.state.character,
-                                    snuggly: evt.target.value
-                                })
-                            }
-                            min="1"
-                            max="5"
-                            step="1"
-                        />
-                        Snuggly
-                    </label>
-                    <br />
-
-                    <label htmlFor="">
-                        No Physical Contact
-                        <input
-                            type="range"
-                            defaultValue={this.state.character.fightGamer}
-                            onChange={evt =>
-                                this._inputChangeHandler("character", {
-                                    ...this.state.character,
-                                    fightGamer: evt.target.value
-                                })
-                            }
-                            min="1"
-                            max="5"
-                            step="1"
-                        />
-                        Fighting Games
-                    </label>
-                    <br />
-
-                    <br />
+                        <label htmlFor="">
+                            No Physical Contact
+                            <input
+                                type="range"
+                                defaultValue={this.state.character.fightGamer}
+                                onChange={evt =>
+                                    this._inputChangeHandler("character", {
+                                        ...this.state.character,
+                                        fightGamer: evt.target.value
+                                    })
+                                }
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+                            Fighting Games
+                        </label>
+                    </div>
                     <br />
                     <button className="button" onClick={this._submitData}>
                         SUBMIT

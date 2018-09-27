@@ -32,14 +32,12 @@ class AllWalks extends Component {
             walks = this.state.list.map((w, i) => {
                 // console.log("List", this.state.list);
                 return (
-                    <div className="container" key={i}>
+                    <div className="list-card" key={i}>
                         <h2>{w.title}</h2>
                         <p>Date: {moment(w.startDate).format("DD.MM.YYYY")}</p>
                         <p>Time: {moment(w.startDate).format("HH:mm")}</p>
-                        <p>Walk Id: {w._id}</p>
-                        <p>Creator: {w.user.email}</p>
-                        <p>Dog: {w.dogs.id}</p>
-                        <Link className="link-button" to={`/walk/${this.state.list[i]._id}`}>
+                        <p>Location: {w.location}</p>
+                        <Link className="link-button button" to={`/walk/${this.state.list[i]._id}`}>
                             Show Walk
                         </Link>
                     </div>
@@ -50,7 +48,11 @@ class AllWalks extends Component {
             walks = <img src="https://loading.io/spinners/spin/lg.ajax-spinner-gif.gif" />;
         }
         // TODO render view if user has no walks, yet
-        return <div>{walks}</div>;
+        return (
+            <div className="container">
+                <div className="list-wrapper">{walks}</div>
+            </div>
+        );
     }
 }
 

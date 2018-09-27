@@ -51,7 +51,7 @@ const dogs = [
         },
         weight: "light",
         restrictions: {
-            maleDogs: false,
+            maleDogs: true,
             femaleDogs: false,
             publicTransport: false,
             car: false
@@ -81,7 +81,7 @@ const dogs = [
             maleDogs: false,
             femaleDogs: false,
             publicTransport: false,
-            car: false
+            car: true
         },
         aboutMe: "Let's have a race",
         dogPicture: "https://res.cloudinary.com/astridvarga/image/upload/v1537790218/Jacky.jpg"
