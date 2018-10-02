@@ -3,7 +3,7 @@
 New to Berlin?
 This App is the solution for dog people looking for like-minded others to go on joint walks and explore the area together.
 
-![Dogs in the Woods](https://github.com/AstiV/aWalkInThePark/blob/master/img/Dogs.jpg)
+![Screen Shot](https://github.com/AstiV/aWalkInThePark/blob/master/img/ScreenShot.jpg)
 
 ## Created with a React + Express starter template
 
@@ -20,3 +20,5 @@ This App is the solution for dog people looking for like-minded others to go on 
 This setup is ready to deploy to Heroku.
 Simply connect your gitHub repository to Heroku and trigger a deployment or activate automatic deploys.
 Do not forget to install the mlab plugin in Heroku!
+
+![Dogs in the Woods](https://github.com/AstiV/aWalkInThePark/blob/master/img/Dogs.jpg)
