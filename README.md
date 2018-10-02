@@ -3,7 +3,7 @@
 New to Berlin?
 This App is the solution for dog people looking for like-minded others to go on joint walks and explore the area together.
 
-![Screen Shot](https://github.com/AstiV/aWalkInThePark/blob/master/img/ScreenShot.jpg)
+![Screen Shot](https://github.com/AstiV/aWalkInThePark/blob/master/img/ScreenShot.png)
 
 ## Created with a React + Express starter template
 
