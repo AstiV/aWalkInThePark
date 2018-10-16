@@ -22,3 +22,5 @@ Simply connect your gitHub repository to Heroku and trigger a deployment or acti
 Do not forget to install the mlab plugin in Heroku!
 
 ![Dogs in the Woods](https://github.com/AstiV/aWalkInThePark/blob/master/img/Dogs.jpg)
+
+<img src="/img/Dogs.jpg" width="100">
