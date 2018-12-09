@@ -11,9 +11,6 @@ class Profile extends Component {
                 <div className="profilepicture">
                     <img src={this.props.user.profilePicture} alt="" />
                 </div>
-                <br />
-                {this.props.user._id}
-                <br />
             </div>
         );
     }
