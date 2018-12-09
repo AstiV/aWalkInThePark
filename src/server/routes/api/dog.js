@@ -14,7 +14,6 @@ router.post("/new", checkLoggedIn, (req, res, next) => {
     // if (req.body.getsAlongWith && !["dogs", "cats", "kids"].includes(dog.getsAlongWith))
     //     return res.status(400).send({ error: "Invalid value for getsAlongWith" });
 
-    // TODO - extract creation of new Dog in function
     let newDog = new Dog({
         user: req.user._id,
         name: dog.name,
