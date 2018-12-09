@@ -5,12 +5,13 @@ This App is the solution for dog people looking for like-minded others to go on 
 
 ![Screen Shot](https://github.com/AstiV/aWalkInThePark/blob/master/img/ScreenShot.png)
 
-## Created with a React + Express starter template
+## Created with a React + Express starter template (by @gisderdube)
 
 1. Clone or copy this repository
-2. `npm install`
-3. `npm run dev`
-4. Go to `http://localhost:3000`
+2.
+3. `npm install`
+4. `npm run dev`
+5. Go to `http://localhost:3000`
 
 -   We're using parcel.js to bundle our javascript files (as well as SCSS)
 -   Additionally, we use babel to transform our code
