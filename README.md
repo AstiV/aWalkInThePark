@@ -7,10 +7,10 @@ This App is the solution for dog people looking for like-minded others to go on 
 
 ## Created with a React + Express starter template (by [@gisderdube](https://github.com/gisderdube))
 
-1. Clone or copy this repository
-2.
-3. `npm install`
-4. `npm run dev`
+1. Clone or copy this repository.
+2. cd into project folder and run `npm install`.
+3. Open another terminal and start MongoDB with `mongod`. (In case of trouble with permissions you can use `sudo mongod`)
+4. Back in the former terminal run `npm run dev`.
 5. Go to `http://localhost:3000`
 
 -   We're using parcel.js to bundle our javascript files (as well as SCSS)
