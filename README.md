@@ -5,7 +5,7 @@ This App is the solution for dog people looking for like-minded others to go on 
 
 ![Screen Shot](https://github.com/AstiV/aWalkInThePark/blob/master/img/ScreenShot.png)
 
-## Created with a React + Express starter template (by @gisderdube)
+## Created with a React + Express starter template (by [@gisderdube](https://github.com/gisderdube))
 
 1. Clone or copy this repository
 2.
