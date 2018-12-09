@@ -22,4 +22,8 @@ This setup is ready to deploy to Heroku.
 Simply connect your gitHub repository to Heroku and trigger a deployment or activate automatic deploys.
 Do not forget to install the mlab plugin in Heroku!
 
+## Visit Deployed Prototype
+
+To check out a deployed version of this prototype, visit `https://a-walk-in-the-park.herokuapp.com/`
+
 <img src="/img/Dogs.jpg" alt="Dogs in the Woods" width="500">
