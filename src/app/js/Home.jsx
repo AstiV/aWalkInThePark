@@ -18,6 +18,11 @@ const Home = props => {
             </div>
             {!props.user && (
                 <p>
+                    New to Berlin?!
+                    <br />
+                    A walk in the Park is the solution for dog people looking for like-minded others to
+                    go on joint walks and explore the area together. <br />
+                    <br />
                     <Link className="link" to="/auth/sign-up">
                         Sign up &nbsp;
                     </Link>
