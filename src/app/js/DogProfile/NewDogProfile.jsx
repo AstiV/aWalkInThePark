@@ -337,7 +337,6 @@ class NewDogProfile extends Component {
     }
 
     _submitData() {
-
         api.post("/api/dog/new", {
             name: this.state.name,
             age: this.state.age,
