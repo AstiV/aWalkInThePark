@@ -328,20 +328,16 @@ class NewDogProfile extends Component {
                     />
                     <br />
                     <br />
-                    <button onClick={this._submitData}>SUBMIT</button>
+                    <button className="button" onClick={this._submitData}>
+                        SUBMIT
+                    </button>
                 </div>
             </div>
         );
     }
 
     _submitData() {
-        // console.log("submitting Data", this.state);
-        // api.post('/api/dog/new', {
-        //     profession: this.state.profession,
-        //     age: this.state.age,
-        //     favoriteFood: this.state.favoriteFood,
-        //     ...
-        // })
+
         api.post("/api/dog/new", {
             name: this.state.name,
             age: this.state.age,
